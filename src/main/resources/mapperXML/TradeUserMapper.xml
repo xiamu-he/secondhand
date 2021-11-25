@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qzx.secondhand.mapper.TradeUserMapper">
+  <resultMap id="BaseResultMap" type="com.qzx.secondhand.domain.TradeUser">
+    <!--@mbg.generated-->
+    <!--@Table trade_user-->
+    <id column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="user_wx_open_id" jdbcType="VARCHAR" property="userWxOpenId" />
+    <result column="user_mail" jdbcType="VARCHAR" property="userMail" />
+    <result column="user_password" jdbcType="VARCHAR" property="userPassword" />
+    <result column="user_sex" jdbcType="CHAR" property="userSex" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_campus_card_number" jdbcType="VARCHAR" property="userCampusCardNumber" />
+    <result column="user_wx_number" jdbcType="VARCHAR" property="userWxNumber" />
+    <result column="user_phone_number" jdbcType="VARCHAR" property="userPhoneNumber" />
+    <result column="user_avatar" jdbcType="LONGVARCHAR" property="userAvatar" />
+    <result column="user_address" jdbcType="VARCHAR" property="userAddress" />
+    <result column="user_level" jdbcType="INTEGER" property="userLevel" />
+    <result column="user_score" jdbcType="INTEGER" property="userScore" />
+    <result column="is_dismissed" jdbcType="BIT" property="isDismissed" />
+    <result column="is_certified" jdbcType="BIT" property="isCertified" />
+    <result column="user_real_name" jdbcType="VARCHAR" property="userRealName" />
+    <result column="user_college" jdbcType="VARCHAR" property="userCollege" />
+    <result column="user_class" jdbcType="VARCHAR" property="userClass" />
+    <result column="user_campus_card_avatar" jdbcType="LONGVARCHAR" property="userCampusCardAvatar" />
+    <result column="user_evaluate_score" jdbcType="FLOAT" property="userEvaluateScore" />
+    <result column="is_beginner" jdbcType="BIT" property="isBeginner" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    user_id, user_wx_open_id, user_mail, user_password, user_sex, user_name, user_campus_card_number, 
+    user_wx_number, user_phone_number, user_avatar, user_address, user_level, user_score, 
+    is_dismissed, is_certified, user_real_name, user_college, user_class, user_campus_card_avatar, 
+    user_evaluate_score, is_beginner, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from trade_user
+    where user_id = #{userId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from trade_user
+    where user_id = #{userId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="user_id" keyProperty="userId" parameterType="com.qzx.secondhand.domain.TradeUser" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into trade_user (user_wx_open_id, user_mail, user_password, 
+      user_sex, user_name, user_campus_card_number, 
+      user_wx_number, user_phone_number, user_avatar, 
+      user_address, user_level, user_score, 
+      is_dismissed, is_certified, user_real_name, 
+      user_college, user_class, user_campus_card_avatar, 
+      user_evaluate_score, is_beginner, gmt_create, 
+      gmt_modified)
+    values (#{userWxOpenId,jdbcType=VARCHAR}, #{userMail,jdbcType=VARCHAR}, #{userPassword,jdbcType=VARCHAR}, 
+      #{userSex,jdbcType=CHAR}, #{userName,jdbcType=VARCHAR}, #{userCampusCardNumber,jdbcType=VARCHAR}, 
+      #{userWxNumber,jdbcType=VARCHAR}, #{userPhoneNumber,jdbcType=VARCHAR}, #{userAvatar,jdbcType=LONGVARCHAR}, 
+      #{userAddress,jdbcType=VARCHAR}, #{userLevel,jdbcType=INTEGER}, #{userScore,jdbcType=INTEGER}, 
+      #{isDismissed,jdbcType=BIT}, #{isCertified,jdbcType=BIT}, #{userRealName,jdbcType=VARCHAR}, 
+      #{userCollege,jdbcType=VARCHAR}, #{userClass,jdbcType=VARCHAR}, #{userCampusCardAvatar,jdbcType=LONGVARCHAR}, 
+      #{userEvaluateScore,jdbcType=FLOAT}, #{isBeginner,jdbcType=BIT}, #{gmtCreate,jdbcType=TIMESTAMP}, 
+      #{gmtModified,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="user_id" keyProperty="userId" parameterType="com.qzx.secondhand.domain.TradeUser" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into trade_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userWxOpenId != null">
+        user_wx_open_id,
+      </if>
+      <if test="userMail != null">
+        user_mail,
+      </if>
+      <if test="userPassword != null">
+        user_password,
+      </if>
+      <if test="userSex != null">
+        user_sex,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="userCampusCardNumber != null">
+        user_campus_card_number,
+      </if>
+      <if test="userWxNumber != null">
+        user_wx_number,
+      </if>
+      <if test="userPhoneNumber != null">
+        user_phone_number,
+      </if>
+      <if test="userAvatar != null">
+        user_avatar,
+      </if>
+      <if test="userAddress != null">
+        user_address,
+      </if>
+      <if test="userLevel != null">
+        user_level,
+      </if>
+      <if test="userScore != null">
+        user_score,
+      </if>
+      <if test="isDismissed != null">
+        is_dismissed,
+      </if>
+      <if test="isCertified != null">
+        is_certified,
+      </if>
+      <if test="userRealName != null">
+        user_real_name,
+      </if>
+      <if test="userCollege != null">
+        user_college,
+      </if>
+      <if test="userClass != null">
+        user_class,
+      </if>
+      <if test="userCampusCardAvatar != null">
+        user_campus_card_avatar,
+      </if>
+      <if test="userEvaluateScore != null">
+        user_evaluate_score,
+      </if>
+      <if test="isBeginner != null">
+        is_beginner,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userWxOpenId != null">
+        #{userWxOpenId,jdbcType=VARCHAR},
+      </if>
+      <if test="userMail != null">
+        #{userMail,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="userSex != null">
+        #{userSex,jdbcType=CHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userCampusCardNumber != null">
+        #{userCampusCardNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="userWxNumber != null">
+        #{userWxNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="userPhoneNumber != null">
+        #{userPhoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="userAvatar != null">
+        #{userAvatar,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="userAddress != null">
+        #{userAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="userLevel != null">
+        #{userLevel,jdbcType=INTEGER},
+      </if>
+      <if test="userScore != null">
+        #{userScore,jdbcType=INTEGER},
+      </if>
+      <if test="isDismissed != null">
+        #{isDismissed,jdbcType=BIT},
+      </if>
+      <if test="isCertified != null">
+        #{isCertified,jdbcType=BIT},
+      </if>
+      <if test="userRealName != null">
+        #{userRealName,jdbcType=VARCHAR},
+      </if>
+      <if test="userCollege != null">
+        #{userCollege,jdbcType=VARCHAR},
+      </if>
+      <if test="userClass != null">
+        #{userClass,jdbcType=VARCHAR},
+      </if>
+      <if test="userCampusCardAvatar != null">
+        #{userCampusCardAvatar,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="userEvaluateScore != null">
+        #{userEvaluateScore,jdbcType=FLOAT},
+      </if>
+      <if test="isBeginner != null">
+        #{isBeginner,jdbcType=BIT},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qzx.secondhand.domain.TradeUser">
+    <!--@mbg.generated-->
+    update trade_user
+    <set>
+      <if test="userWxOpenId != null">
+        user_wx_open_id = #{userWxOpenId,jdbcType=VARCHAR},
+      </if>
+      <if test="userMail != null">
+        user_mail = #{userMail,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        user_password = #{userPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="userSex != null">
+        user_sex = #{userSex,jdbcType=CHAR},
+      </if>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userCampusCardNumber != null">
+        user_campus_card_number = #{userCampusCardNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="userWxNumber != null">
+        user_wx_number = #{userWxNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="userPhoneNumber != null">
+        user_phone_number = #{userPhoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="userAvatar != null">
+        user_avatar = #{userAvatar,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="userAddress != null">
+        user_address = #{userAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="userLevel != null">
+        user_level = #{userLevel,jdbcType=INTEGER},
+      </if>
+      <if test="userScore != null">
+        user_score = #{userScore,jdbcType=INTEGER},
+      </if>
+      <if test="isDismissed != null">
+        is_dismissed = #{isDismissed,jdbcType=BIT},
+      </if>
+      <if test="isCertified != null">
+        is_certified = #{isCertified,jdbcType=BIT},
+      </if>
+      <if test="userRealName != null">
+        user_real_name = #{userRealName,jdbcType=VARCHAR},
+      </if>
+      <if test="userCollege != null">
+        user_college = #{userCollege,jdbcType=VARCHAR},
+      </if>
+      <if test="userClass != null">
+        user_class = #{userClass,jdbcType=VARCHAR},
+      </if>
+      <if test="userCampusCardAvatar != null">
+        user_campus_card_avatar = #{userCampusCardAvatar,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="userEvaluateScore != null">
+        user_evaluate_score = #{userEvaluateScore,jdbcType=FLOAT},
+      </if>
+      <if test="isBeginner != null">
+        is_beginner = #{isBeginner,jdbcType=BIT},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qzx.secondhand.domain.TradeUser">
+    <!--@mbg.generated-->
+    update trade_user
+    set user_wx_open_id = #{userWxOpenId,jdbcType=VARCHAR},
+      user_mail = #{userMail,jdbcType=VARCHAR},
+      user_password = #{userPassword,jdbcType=VARCHAR},
+      user_sex = #{userSex,jdbcType=CHAR},
+      user_name = #{userName,jdbcType=VARCHAR},
+      user_campus_card_number = #{userCampusCardNumber,jdbcType=VARCHAR},
+      user_wx_number = #{userWxNumber,jdbcType=VARCHAR},
+      user_phone_number = #{userPhoneNumber,jdbcType=VARCHAR},
+      user_avatar = #{userAvatar,jdbcType=LONGVARCHAR},
+      user_address = #{userAddress,jdbcType=VARCHAR},
+      user_level = #{userLevel,jdbcType=INTEGER},
+      user_score = #{userScore,jdbcType=INTEGER},
+      is_dismissed = #{isDismissed,jdbcType=BIT},
+      is_certified = #{isCertified,jdbcType=BIT},
+      user_real_name = #{userRealName,jdbcType=VARCHAR},
+      user_college = #{userCollege,jdbcType=VARCHAR},
+      user_class = #{userClass,jdbcType=VARCHAR},
+      user_campus_card_avatar = #{userCampusCardAvatar,jdbcType=LONGVARCHAR},
+      user_evaluate_score = #{userEvaluateScore,jdbcType=FLOAT},
+      is_beginner = #{isBeginner,jdbcType=BIT},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where user_id = #{userId,jdbcType=BIGINT}
+  </update>
+</mapper>
