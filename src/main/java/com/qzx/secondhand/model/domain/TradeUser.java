@@ -1,4 +1,4 @@
-package com.qzx.secondhand.domain;
+package com.qzx.secondhand.model.domain;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

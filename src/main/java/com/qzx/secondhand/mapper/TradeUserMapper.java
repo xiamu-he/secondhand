@@ -1,6 +1,9 @@
 package com.qzx.secondhand.mapper;
+import org.apache.ibatis.annotations.Param;
 
-import com.qzx.secondhand.domain.TradeUser;
+import com.qzx.secondhand.model.domain.TradeUser;
+
+import java.util.List;
 
 /**
 @author qzx
@@ -19,4 +22,6 @@ public interface TradeUserMapper {
     int updateByPrimaryKeySelective(TradeUser record);
 
     int updateByPrimaryKey(TradeUser record);
+
+    List<TradeUser> selectall();
 }

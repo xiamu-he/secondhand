@@ -1,9 +1,13 @@
 package com.qzx.secondhand.service;
 
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.qzx.secondhand.domain.TradeUser;
+import com.qzx.secondhand.model.domain.TradeUser;
 import com.qzx.secondhand.mapper.TradeUserMapper;
+
+import java.util.List;
+
 /**
 @author qzx
 @create 2021-11-25 20:32
@@ -15,7 +19,6 @@ public class TradeUserService{
     @Resource
     private TradeUserMapper tradeUserMapper;
 
-    
     public int deleteByPrimaryKey(Long userId) {
         return tradeUserMapper.deleteByPrimaryKey(userId);
     }
@@ -40,9 +43,14 @@ public class TradeUserService{
         return tradeUserMapper.updateByPrimaryKeySelective(record);
     }
 
-    
     public int updateByPrimaryKey(TradeUser record) {
         return tradeUserMapper.updateByPrimaryKey(record);
     }
 
+    @Async
+    public void selectall() {
+        System.out.println(Thread.currentThread().getName()+"开始执行了");
+        List<TradeUser> selectall = tradeUserMapper.selectall();
+        System.out.println(Thread.currentThread().getName()+"结束了");
+    }
 }
