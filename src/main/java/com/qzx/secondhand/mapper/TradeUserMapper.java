@@ -22,6 +22,4 @@ public interface TradeUserMapper {
     int updateByPrimaryKeySelective(TradeUser record);
 
     int updateByPrimaryKey(TradeUser record);
-
-    List<TradeUser> selectall();
 }

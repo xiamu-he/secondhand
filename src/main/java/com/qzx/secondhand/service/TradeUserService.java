@@ -46,11 +46,4 @@ public class TradeUserService{
     public int updateByPrimaryKey(TradeUser record) {
         return tradeUserMapper.updateByPrimaryKey(record);
     }
-
-    @Async
-    public void selectall() {
-        System.out.println(Thread.currentThread().getName()+"开始执行了");
-        List<TradeUser> selectall = tradeUserMapper.selectall();
-        System.out.println(Thread.currentThread().getName()+"结束了");
-    }
 }
