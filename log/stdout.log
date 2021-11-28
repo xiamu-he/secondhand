@@ -1,199 +1,449 @@
-2021-11-27 12:15:12,785 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [StartupInfoLogger.java : 55] Starting SecondhandApplication using Java 11 on DESKTOP-MVLN807 with PID 25672 (F:\aaa\后端开发\3.java\code\secondhand\target\classes started by 14522 in F:\aaa\后端开发\3.java\code\secondhand)
-2021-11-27 12:15:12,787 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [SpringApplication.java : 639] The following profiles are active: dev
-2021-11-27 12:15:12,839 [INFO ] restartedMain o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-11-27 12:15:12,839 [INFO ] restartedMain o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-11-27 12:15:13,355 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-11-27 12:15:13,356 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-11-27 12:15:13,371 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
-2021-11-27 12:15:13,551 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'thread.pool-com.qzx.secondhand.model.config.TaskThreadPoolConfig' of type [com.qzx.secondhand.model.config.TaskThreadPoolConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:15:13,552 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'defaultThreadPoolConfig' of type [com.qzx.secondhand.config.DefaultThreadPoolConfig$$EnhancerBySpringCGLIB$$a818cab1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:15:13,559 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:15:13,600 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.datasource.druid-com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties' of type [com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:15:13,604 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'advisor' of type [org.springframework.aop.support.RegexpMethodPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:15:13,812 [INFO ] restartedMain org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8080 (http)
-2021-11-27 12:15:13,821 [INFO ] restartedMain org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8080"]
-2021-11-27 12:15:13,821 [INFO ] restartedMain org.apache.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
-2021-11-27 12:15:13,822 [INFO ] restartedMain org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.55]
-2021-11-27 12:15:13,874 [INFO ] restartedMain o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
-2021-11-27 12:15:13,875 [INFO ] restartedMain o.s.b.web.servlet.context.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 1035 ms
-2021-11-27 12:15:13,992 [INFO ] restartedMain c.a.d.spring.boot.autoconfigure.DruidDataSourceAutoConfigure [DruidDataSourceAutoConfigure.java : 56] Init DruidDataSource
-2021-11-27 12:15:15,499 [INFO ] restartedMain com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 1003] {dataSource-1} inited
-2021-11-27 12:15:16,074 [INFO ] restartedMain o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer [OptionalLiveReloadServer.java : 58] LiveReload server is running on port 35729
-2021-11-27 12:15:16,120 [INFO ] restartedMain org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8080"]
-2021-11-27 12:15:16,134 [INFO ] restartedMain org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8080 (http) with context path ''
-2021-11-27 12:15:16,142 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [StartupInfoLogger.java : 61] Started SecondhandApplication in 3.915 seconds (JVM running for 4.811)
-2021-11-27 12:15:42,484 [INFO ] http-nio-8080-exec-1 o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-11-27 12:15:42,485 [INFO ] http-nio-8080-exec-1 org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
-2021-11-27 12:15:42,486 [INFO ] http-nio-8080-exec-1 org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 1 ms
-2021-11-27 12:25:27,871 [INFO ] SpringApplicationShutdownHook com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 1948] {dataSource-1} closing ...
-2021-11-27 12:25:27,883 [INFO ] SpringApplicationShutdownHook com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 2020] {dataSource-1} closed
-2021-11-27 12:25:33,006 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [StartupInfoLogger.java : 55] Starting SecondhandApplication using Java 11 on DESKTOP-MVLN807 with PID 5556 (F:\aaa\后端开发\3.java\code\secondhand\target\classes started by 14522 in F:\aaa\后端开发\3.java\code\secondhand)
-2021-11-27 12:25:33,008 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [SpringApplication.java : 639] The following profiles are active: dev
-2021-11-27 12:25:33,053 [INFO ] restartedMain o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-11-27 12:25:33,054 [INFO ] restartedMain o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-11-27 12:25:33,574 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-11-27 12:25:33,576 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-11-27 12:25:33,590 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
-2021-11-27 12:25:33,787 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'thread.pool-com.qzx.secondhand.model.config.TaskThreadPoolConfig' of type [com.qzx.secondhand.model.config.TaskThreadPoolConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:25:33,788 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'defaultThreadPoolConfig' of type [com.qzx.secondhand.config.DefaultThreadPoolConfig$$EnhancerBySpringCGLIB$$16a8c5a8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:25:33,798 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:25:33,839 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.datasource.druid-com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties' of type [com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:25:33,843 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'advisor' of type [org.springframework.aop.support.RegexpMethodPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:25:34,069 [INFO ] restartedMain org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8080 (http)
-2021-11-27 12:25:34,077 [INFO ] restartedMain org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8080"]
-2021-11-27 12:25:34,077 [INFO ] restartedMain org.apache.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
-2021-11-27 12:25:34,077 [INFO ] restartedMain org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.55]
-2021-11-27 12:25:34,135 [INFO ] restartedMain o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
-2021-11-27 12:25:34,136 [INFO ] restartedMain o.s.b.web.servlet.context.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 1082 ms
-2021-11-27 12:25:34,258 [INFO ] restartedMain c.a.d.spring.boot.autoconfigure.DruidDataSourceAutoConfigure [DruidDataSourceAutoConfigure.java : 56] Init DruidDataSource
-2021-11-27 12:25:35,727 [INFO ] restartedMain com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 1003] {dataSource-1} inited
-2021-11-27 12:25:36,605 [INFO ] restartedMain o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer [OptionalLiveReloadServer.java : 58] LiveReload server is running on port 35729
-2021-11-27 12:25:36,728 [INFO ] restartedMain org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8080"]
-2021-11-27 12:25:36,759 [INFO ] restartedMain org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8080 (http) with context path ''
-2021-11-27 12:25:36,804 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [StartupInfoLogger.java : 61] Started SecondhandApplication in 4.226 seconds (JVM running for 4.929)
-2021-11-27 12:25:39,318 [INFO ] http-nio-8080-exec-1 o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-11-27 12:25:39,319 [INFO ] http-nio-8080-exec-1 org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
-2021-11-27 12:25:39,320 [INFO ] http-nio-8080-exec-1 org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 1 ms
-2021-11-27 12:26:38,792 [INFO ] SpringApplicationShutdownHook com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 1948] {dataSource-1} closing ...
-2021-11-27 12:26:38,801 [INFO ] SpringApplicationShutdownHook com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 2020] {dataSource-1} closed
-2021-11-27 12:26:42,061 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [StartupInfoLogger.java : 55] Starting SecondhandApplication using Java 11 on DESKTOP-MVLN807 with PID 31624 (F:\aaa\后端开发\3.java\code\secondhand\target\classes started by 14522 in F:\aaa\后端开发\3.java\code\secondhand)
-2021-11-27 12:26:42,063 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [SpringApplication.java : 639] The following profiles are active: dev
-2021-11-27 12:26:42,122 [INFO ] restartedMain o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-11-27 12:26:42,122 [INFO ] restartedMain o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-11-27 12:26:42,726 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-11-27 12:26:42,728 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-11-27 12:26:42,742 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
-2021-11-27 12:26:42,932 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'thread.pool-com.qzx.secondhand.model.config.TaskThreadPoolConfig' of type [com.qzx.secondhand.model.config.TaskThreadPoolConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:26:42,932 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'defaultThreadPoolConfig' of type [com.qzx.secondhand.config.DefaultThreadPoolConfig$$EnhancerBySpringCGLIB$$69409b4e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:26:42,942 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:26:42,985 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.datasource.druid-com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties' of type [com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:26:42,990 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'advisor' of type [org.springframework.aop.support.RegexpMethodPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:26:43,237 [INFO ] restartedMain org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8080 (http)
-2021-11-27 12:26:43,244 [INFO ] restartedMain org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8080"]
-2021-11-27 12:26:43,244 [INFO ] restartedMain org.apache.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
-2021-11-27 12:26:43,245 [INFO ] restartedMain org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.55]
-2021-11-27 12:26:43,303 [INFO ] restartedMain o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
-2021-11-27 12:26:43,303 [INFO ] restartedMain o.s.b.web.servlet.context.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 1180 ms
-2021-11-27 12:26:43,420 [INFO ] restartedMain c.a.d.spring.boot.autoconfigure.DruidDataSourceAutoConfigure [DruidDataSourceAutoConfigure.java : 56] Init DruidDataSource
-2021-11-27 12:26:44,870 [INFO ] restartedMain com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 1003] {dataSource-1} inited
-2021-11-27 12:26:45,484 [INFO ] restartedMain o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer [OptionalLiveReloadServer.java : 58] LiveReload server is running on port 35729
-2021-11-27 12:26:45,535 [INFO ] restartedMain org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8080"]
-2021-11-27 12:26:45,552 [INFO ] restartedMain org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8080 (http) with context path ''
-2021-11-27 12:26:45,569 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [StartupInfoLogger.java : 61] Started SecondhandApplication in 4.142 seconds (JVM running for 4.958)
-2021-11-27 12:26:46,579 [INFO ] http-nio-8080-exec-1 o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-11-27 12:26:46,580 [INFO ] http-nio-8080-exec-1 org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
-2021-11-27 12:26:46,581 [INFO ] http-nio-8080-exec-1 org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 1 ms
-2021-11-27 12:26:46,632 [DEBUG] default-thread-9 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==>  Preparing: select user_id, user_wx_open_id, user_mail, user_password, user_sex, user_name, user_campus_card_number, user_wx_number, user_phone_number, user_avatar, user_address, user_level, user_score, is_dismissed, is_certified, user_real_name, user_college, user_class, user_campus_card_avatar, user_evaluate_score, is_beginner, gmt_create, gmt_modified from trade_user
-2021-11-27 12:26:46,632 [DEBUG] default-thread-2 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==>  Preparing: select user_id, user_wx_open_id, user_mail, user_password, user_sex, user_name, user_campus_card_number, user_wx_number, user_phone_number, user_avatar, user_address, user_level, user_score, is_dismissed, is_certified, user_real_name, user_college, user_class, user_campus_card_avatar, user_evaluate_score, is_beginner, gmt_create, gmt_modified from trade_user
-2021-11-27 12:26:46,632 [DEBUG] default-thread-6 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==>  Preparing: select user_id, user_wx_open_id, user_mail, user_password, user_sex, user_name, user_campus_card_number, user_wx_number, user_phone_number, user_avatar, user_address, user_level, user_score, is_dismissed, is_certified, user_real_name, user_college, user_class, user_campus_card_avatar, user_evaluate_score, is_beginner, gmt_create, gmt_modified from trade_user
-2021-11-27 12:26:46,632 [DEBUG] default-thread-7 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==>  Preparing: select user_id, user_wx_open_id, user_mail, user_password, user_sex, user_name, user_campus_card_number, user_wx_number, user_phone_number, user_avatar, user_address, user_level, user_score, is_dismissed, is_certified, user_real_name, user_college, user_class, user_campus_card_avatar, user_evaluate_score, is_beginner, gmt_create, gmt_modified from trade_user
-2021-11-27 12:26:46,632 [DEBUG] default-thread-1 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==>  Preparing: select user_id, user_wx_open_id, user_mail, user_password, user_sex, user_name, user_campus_card_number, user_wx_number, user_phone_number, user_avatar, user_address, user_level, user_score, is_dismissed, is_certified, user_real_name, user_college, user_class, user_campus_card_avatar, user_evaluate_score, is_beginner, gmt_create, gmt_modified from trade_user
-2021-11-27 12:26:46,724 [DEBUG] default-thread-1 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==> Parameters: 
-2021-11-27 12:26:46,724 [DEBUG] default-thread-2 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==> Parameters: 
-2021-11-27 12:26:46,724 [DEBUG] default-thread-6 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==> Parameters: 
-2021-11-27 12:26:46,724 [DEBUG] default-thread-9 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==> Parameters: 
-2021-11-27 12:26:46,724 [DEBUG] default-thread-7 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==> Parameters: 
-2021-11-27 12:26:46,861 [DEBUG] default-thread-8 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==>  Preparing: select user_id, user_wx_open_id, user_mail, user_password, user_sex, user_name, user_campus_card_number, user_wx_number, user_phone_number, user_avatar, user_address, user_level, user_score, is_dismissed, is_certified, user_real_name, user_college, user_class, user_campus_card_avatar, user_evaluate_score, is_beginner, gmt_create, gmt_modified from trade_user
-2021-11-27 12:26:46,862 [DEBUG] default-thread-8 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==> Parameters: 
-2021-11-27 12:26:47,328 [DEBUG] default-thread-10 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==>  Preparing: select user_id, user_wx_open_id, user_mail, user_password, user_sex, user_name, user_campus_card_number, user_wx_number, user_phone_number, user_avatar, user_address, user_level, user_score, is_dismissed, is_certified, user_real_name, user_college, user_class, user_campus_card_avatar, user_evaluate_score, is_beginner, gmt_create, gmt_modified from trade_user
-2021-11-27 12:26:47,329 [DEBUG] default-thread-10 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==> Parameters: 
-2021-11-27 12:26:47,590 [DEBUG] default-thread-4 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==>  Preparing: select user_id, user_wx_open_id, user_mail, user_password, user_sex, user_name, user_campus_card_number, user_wx_number, user_phone_number, user_avatar, user_address, user_level, user_score, is_dismissed, is_certified, user_real_name, user_college, user_class, user_campus_card_avatar, user_evaluate_score, is_beginner, gmt_create, gmt_modified from trade_user
-2021-11-27 12:26:47,591 [DEBUG] default-thread-4 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==> Parameters: 
-2021-11-27 12:26:47,815 [DEBUG] default-thread-3 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==>  Preparing: select user_id, user_wx_open_id, user_mail, user_password, user_sex, user_name, user_campus_card_number, user_wx_number, user_phone_number, user_avatar, user_address, user_level, user_score, is_dismissed, is_certified, user_real_name, user_college, user_class, user_campus_card_avatar, user_evaluate_score, is_beginner, gmt_create, gmt_modified from trade_user
-2021-11-27 12:26:47,815 [DEBUG] default-thread-3 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==> Parameters: 
-2021-11-27 12:26:48,034 [DEBUG] default-thread-5 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==>  Preparing: select user_id, user_wx_open_id, user_mail, user_password, user_sex, user_name, user_campus_card_number, user_wx_number, user_phone_number, user_avatar, user_address, user_level, user_score, is_dismissed, is_certified, user_real_name, user_college, user_class, user_campus_card_avatar, user_evaluate_score, is_beginner, gmt_create, gmt_modified from trade_user
-2021-11-27 12:26:48,034 [DEBUG] default-thread-5 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==> Parameters: 
-2021-11-27 12:27:00,090 [DEBUG] default-thread-7 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] <==      Total: 4772
-2021-11-27 12:27:01,097 [DEBUG] default-thread-3 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] <==      Total: 4772
-2021-11-27 12:27:01,867 [DEBUG] default-thread-1 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] <==      Total: 4772
-2021-11-27 12:27:02,259 [DEBUG] default-thread-9 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] <==      Total: 4772
-2021-11-27 12:27:02,398 [DEBUG] default-thread-6 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] <==      Total: 4772
-2021-11-27 12:27:02,492 [DEBUG] default-thread-5 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] <==      Total: 4772
-2021-11-27 12:27:02,946 [DEBUG] default-thread-2 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] <==      Total: 4772
-2021-11-27 12:27:03,073 [DEBUG] default-thread-4 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] <==      Total: 4772
-2021-11-27 12:27:03,322 [DEBUG] default-thread-8 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] <==      Total: 4772
-2021-11-27 12:27:03,424 [DEBUG] default-thread-10 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] <==      Total: 4772
-2021-11-27 12:27:12,313 [INFO ] Thread-5 com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 1948] {dataSource-1} closing ...
-2021-11-27 12:27:12,325 [INFO ] Thread-5 com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 2020] {dataSource-1} closed
-2021-11-27 12:27:12,410 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [StartupInfoLogger.java : 55] Starting SecondhandApplication using Java 11 on DESKTOP-MVLN807 with PID 31624 (F:\aaa\后端开发\3.java\code\secondhand\target\classes started by 14522 in F:\aaa\后端开发\3.java\code\secondhand)
-2021-11-27 12:27:12,410 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [SpringApplication.java : 639] The following profiles are active: dev
-2021-11-27 12:27:12,547 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-11-27 12:27:12,547 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-11-27 12:27:12,549 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
-2021-11-27 12:27:12,584 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'thread.pool-com.qzx.secondhand.model.config.TaskThreadPoolConfig' of type [com.qzx.secondhand.model.config.TaskThreadPoolConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:27:12,585 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'defaultThreadPoolConfig' of type [com.qzx.secondhand.config.DefaultThreadPoolConfig$$EnhancerBySpringCGLIB$$69409b4e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:27:12,587 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:27:12,595 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.datasource.druid-com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties' of type [com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:27:12,595 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'advisor' of type [org.springframework.aop.support.RegexpMethodPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:27:12,631 [INFO ] restartedMain org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8080 (http)
-2021-11-27 12:27:12,632 [INFO ] restartedMain org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8080"]
-2021-11-27 12:27:12,632 [INFO ] restartedMain org.apache.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
-2021-11-27 12:27:12,633 [INFO ] restartedMain org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.55]
-2021-11-27 12:27:12,643 [INFO ] restartedMain o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
-2021-11-27 12:27:12,644 [INFO ] restartedMain o.s.b.web.servlet.context.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 232 ms
-2021-11-27 12:27:12,678 [INFO ] restartedMain c.a.d.spring.boot.autoconfigure.DruidDataSourceAutoConfigure [DruidDataSourceAutoConfigure.java : 56] Init DruidDataSource
-2021-11-27 12:27:14,170 [INFO ] restartedMain com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 1003] {dataSource-2} inited
-2021-11-27 12:27:14,492 [INFO ] restartedMain o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer [OptionalLiveReloadServer.java : 58] LiveReload server is running on port 35729
-2021-11-27 12:27:14,603 [INFO ] restartedMain org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8080"]
-2021-11-27 12:27:14,605 [INFO ] restartedMain org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8080 (http) with context path ''
-2021-11-27 12:27:14,613 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [StartupInfoLogger.java : 61] Started SecondhandApplication in 2.234 seconds (JVM running for 34.002)
-2021-11-27 12:27:14,617 [INFO ] restartedMain o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java : 63] Condition evaluation unchanged
-2021-11-27 12:27:15,718 [INFO ] SpringApplicationShutdownHook com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 1948] {dataSource-2} closing ...
-2021-11-27 12:27:15,719 [INFO ] SpringApplicationShutdownHook com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 2020] {dataSource-2} closed
-2021-11-27 12:27:19,947 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [StartupInfoLogger.java : 55] Starting SecondhandApplication using Java 11 on DESKTOP-MVLN807 with PID 29464 (F:\aaa\后端开发\3.java\code\secondhand\target\classes started by 14522 in F:\aaa\后端开发\3.java\code\secondhand)
-2021-11-27 12:27:19,948 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [SpringApplication.java : 639] The following profiles are active: dev
-2021-11-27 12:27:20,005 [INFO ] restartedMain o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-11-27 12:27:20,006 [INFO ] restartedMain o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-11-27 12:27:20,607 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-11-27 12:27:20,608 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-11-27 12:27:20,623 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
-2021-11-27 12:27:20,811 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'thread.pool-com.qzx.secondhand.model.config.TaskThreadPoolConfig' of type [com.qzx.secondhand.model.config.TaskThreadPoolConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:27:20,812 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'defaultThreadPoolConfig' of type [com.qzx.secondhand.config.DefaultThreadPoolConfig$$EnhancerBySpringCGLIB$$577ea35a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:27:20,820 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:27:20,862 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.datasource.druid-com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties' of type [com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:27:20,866 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'advisor' of type [org.springframework.aop.support.RegexpMethodPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-11-27 12:27:21,087 [INFO ] restartedMain org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8080 (http)
-2021-11-27 12:27:21,093 [INFO ] restartedMain org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8080"]
-2021-11-27 12:27:21,094 [INFO ] restartedMain org.apache.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
-2021-11-27 12:27:21,094 [INFO ] restartedMain org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.55]
-2021-11-27 12:27:21,151 [INFO ] restartedMain o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
-2021-11-27 12:27:21,152 [INFO ] restartedMain o.s.b.web.servlet.context.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 1145 ms
-2021-11-27 12:27:21,273 [INFO ] restartedMain c.a.d.spring.boot.autoconfigure.DruidDataSourceAutoConfigure [DruidDataSourceAutoConfigure.java : 56] Init DruidDataSource
-2021-11-27 12:27:22,816 [INFO ] restartedMain com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 1003] {dataSource-1} inited
-2021-11-27 12:27:23,387 [INFO ] restartedMain o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer [OptionalLiveReloadServer.java : 58] LiveReload server is running on port 35729
-2021-11-27 12:27:23,446 [INFO ] restartedMain org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8080"]
-2021-11-27 12:27:23,469 [INFO ] restartedMain org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8080 (http) with context path ''
-2021-11-27 12:27:23,486 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [StartupInfoLogger.java : 61] Started SecondhandApplication in 4.081 seconds (JVM running for 4.897)
-2021-11-27 12:27:35,368 [INFO ] http-nio-8080-exec-1 o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-11-27 12:27:35,369 [INFO ] http-nio-8080-exec-1 org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
-2021-11-27 12:27:35,370 [INFO ] http-nio-8080-exec-1 org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 1 ms
-2021-11-27 12:27:35,418 [DEBUG] default-thread-9 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==>  Preparing: select user_id, user_wx_open_id, user_mail, user_password, user_sex, user_name, user_campus_card_number, user_wx_number, user_phone_number, user_avatar, user_address, user_level, user_score, is_dismissed, is_certified, user_real_name, user_college, user_class, user_campus_card_avatar, user_evaluate_score, is_beginner, gmt_create, gmt_modified from trade_user
-2021-11-27 12:27:35,418 [DEBUG] default-thread-7 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==>  Preparing: select user_id, user_wx_open_id, user_mail, user_password, user_sex, user_name, user_campus_card_number, user_wx_number, user_phone_number, user_avatar, user_address, user_level, user_score, is_dismissed, is_certified, user_real_name, user_college, user_class, user_campus_card_avatar, user_evaluate_score, is_beginner, gmt_create, gmt_modified from trade_user
-2021-11-27 12:27:35,418 [DEBUG] default-thread-4 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==>  Preparing: select user_id, user_wx_open_id, user_mail, user_password, user_sex, user_name, user_campus_card_number, user_wx_number, user_phone_number, user_avatar, user_address, user_level, user_score, is_dismissed, is_certified, user_real_name, user_college, user_class, user_campus_card_avatar, user_evaluate_score, is_beginner, gmt_create, gmt_modified from trade_user
-2021-11-27 12:27:35,418 [DEBUG] default-thread-1 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==>  Preparing: select user_id, user_wx_open_id, user_mail, user_password, user_sex, user_name, user_campus_card_number, user_wx_number, user_phone_number, user_avatar, user_address, user_level, user_score, is_dismissed, is_certified, user_real_name, user_college, user_class, user_campus_card_avatar, user_evaluate_score, is_beginner, gmt_create, gmt_modified from trade_user
-2021-11-27 12:27:35,418 [DEBUG] default-thread-5 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==>  Preparing: select user_id, user_wx_open_id, user_mail, user_password, user_sex, user_name, user_campus_card_number, user_wx_number, user_phone_number, user_avatar, user_address, user_level, user_score, is_dismissed, is_certified, user_real_name, user_college, user_class, user_campus_card_avatar, user_evaluate_score, is_beginner, gmt_create, gmt_modified from trade_user
-2021-11-27 12:27:35,505 [DEBUG] default-thread-4 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==> Parameters: 
-2021-11-27 12:27:35,505 [DEBUG] default-thread-7 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==> Parameters: 
-2021-11-27 12:27:35,505 [DEBUG] default-thread-1 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==> Parameters: 
-2021-11-27 12:27:35,505 [DEBUG] default-thread-9 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==> Parameters: 
-2021-11-27 12:27:35,505 [DEBUG] default-thread-5 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==> Parameters: 
-2021-11-27 12:27:35,650 [DEBUG] default-thread-3 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==>  Preparing: select user_id, user_wx_open_id, user_mail, user_password, user_sex, user_name, user_campus_card_number, user_wx_number, user_phone_number, user_avatar, user_address, user_level, user_score, is_dismissed, is_certified, user_real_name, user_college, user_class, user_campus_card_avatar, user_evaluate_score, is_beginner, gmt_create, gmt_modified from trade_user
-2021-11-27 12:27:35,651 [DEBUG] default-thread-3 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==> Parameters: 
-2021-11-27 12:27:36,149 [DEBUG] default-thread-8 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==>  Preparing: select user_id, user_wx_open_id, user_mail, user_password, user_sex, user_name, user_campus_card_number, user_wx_number, user_phone_number, user_avatar, user_address, user_level, user_score, is_dismissed, is_certified, user_real_name, user_college, user_class, user_campus_card_avatar, user_evaluate_score, is_beginner, gmt_create, gmt_modified from trade_user
-2021-11-27 12:27:36,150 [DEBUG] default-thread-8 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==> Parameters: 
-2021-11-27 12:27:36,406 [DEBUG] default-thread-6 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==>  Preparing: select user_id, user_wx_open_id, user_mail, user_password, user_sex, user_name, user_campus_card_number, user_wx_number, user_phone_number, user_avatar, user_address, user_level, user_score, is_dismissed, is_certified, user_real_name, user_college, user_class, user_campus_card_avatar, user_evaluate_score, is_beginner, gmt_create, gmt_modified from trade_user
-2021-11-27 12:27:36,407 [DEBUG] default-thread-6 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==> Parameters: 
-2021-11-27 12:27:36,635 [DEBUG] default-thread-2 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==>  Preparing: select user_id, user_wx_open_id, user_mail, user_password, user_sex, user_name, user_campus_card_number, user_wx_number, user_phone_number, user_avatar, user_address, user_level, user_score, is_dismissed, is_certified, user_real_name, user_college, user_class, user_campus_card_avatar, user_evaluate_score, is_beginner, gmt_create, gmt_modified from trade_user
-2021-11-27 12:27:36,635 [DEBUG] default-thread-2 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==> Parameters: 
-2021-11-27 12:27:36,861 [DEBUG] default-thread-10 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==>  Preparing: select user_id, user_wx_open_id, user_mail, user_password, user_sex, user_name, user_campus_card_number, user_wx_number, user_phone_number, user_avatar, user_address, user_level, user_score, is_dismissed, is_certified, user_real_name, user_college, user_class, user_campus_card_avatar, user_evaluate_score, is_beginner, gmt_create, gmt_modified from trade_user
-2021-11-27 12:27:36,862 [DEBUG] default-thread-10 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] ==> Parameters: 
-2021-11-27 12:27:46,945 [DEBUG] default-thread-4 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] <==      Total: 4772
-2021-11-27 12:27:49,227 [DEBUG] default-thread-3 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] <==      Total: 4772
-2021-11-27 12:27:49,304 [DEBUG] default-thread-9 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] <==      Total: 4772
-2021-11-27 12:27:49,425 [DEBUG] default-thread-5 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] <==      Total: 4772
-2021-11-27 12:27:50,910 [DEBUG] default-thread-1 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] <==      Total: 4772
-2021-11-27 12:27:51,132 [DEBUG] default-thread-8 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] <==      Total: 4772
-2021-11-27 12:27:51,384 [DEBUG] default-thread-6 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] <==      Total: 4772
-2021-11-27 12:27:51,687 [DEBUG] default-thread-10 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] <==      Total: 4772
-2021-11-27 12:27:51,722 [DEBUG] default-thread-2 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] <==      Total: 4772
-2021-11-27 12:27:52,664 [DEBUG] default-thread-7 com.qzx.secondhand.mapper.TradeUserMapper.selectall [BaseJdbcLogger.java : 137] <==      Total: 4772
+2021-11-28 17:37:21,601 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [StartupInfoLogger.java : 55] Starting SecondhandApplication using Java 11.0.3 on xiamu8861 with PID 14832 (E:\5，研究生\8，后端\3.java\code\secondhand\target\classes started by 14522 in E:\5，研究生\8，后端\3.java\code\secondhand)
+2021-11-28 17:37:21,613 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [SpringApplication.java : 639] The following profiles are active: dev
+2021-11-28 17:37:21,799 [INFO ] restartedMain o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-11-28 17:37:21,800 [INFO ] restartedMain o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-11-28 17:37:24,018 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-11-28 17:37:24,022 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-11-28 17:37:24,101 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2021-11-28 17:37:24,664 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'thread.pool-com.qzx.secondhand.model.config.TaskThreadPoolConfig' of type [com.qzx.secondhand.model.config.TaskThreadPoolConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-28 17:37:24,665 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'defaultThreadPoolConfig' of type [com.qzx.secondhand.config.DefaultThreadPoolConfig$$EnhancerBySpringCGLIB$$510c02fc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-28 17:37:24,693 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-28 17:37:24,792 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.datasource.druid-com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties' of type [com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-28 17:37:24,818 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'advisor' of type [org.springframework.aop.support.RegexpMethodPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-28 17:37:25,488 [INFO ] restartedMain org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8080 (http)
+2021-11-28 17:37:25,535 [INFO ] restartedMain org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-11-28 17:37:25,535 [INFO ] restartedMain org.apache.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2021-11-28 17:37:25,536 [INFO ] restartedMain org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-28 17:37:25,655 [INFO ] restartedMain o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2021-11-28 17:37:25,656 [INFO ] restartedMain o.s.b.web.servlet.context.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 3855 ms
+2021-11-28 17:37:25,993 [INFO ] restartedMain c.a.d.spring.boot.autoconfigure.DruidDataSourceAutoConfigure [DruidDataSourceAutoConfigure.java : 56] Init DruidDataSource
+2021-11-28 17:37:28,374 [INFO ] restartedMain com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 1003] {dataSource-1} inited
+2021-11-28 17:37:30,075 [INFO ] restartedMain o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer [OptionalLiveReloadServer.java : 58] LiveReload server is running on port 35729
+2021-11-28 17:37:30,148 [INFO ] restartedMain org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8080"]
+2021-11-28 17:37:30,179 [INFO ] restartedMain org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-28 17:37:30,192 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [StartupInfoLogger.java : 61] Started SecondhandApplication in 11.031 seconds (JVM running for 25.213)
+2021-11-28 17:37:58,157 [INFO ] http-nio-8080-exec-1 o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-28 17:37:58,160 [INFO ] http-nio-8080-exec-1 org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2021-11-28 17:37:58,161 [INFO ] http-nio-8080-exec-1 org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 1 ms
+2021-11-28 17:37:58,272 [ERROR] http-nio-8080-exec-1 com.qzx.secondhand.exception.handler.GlobalExceptionHandler [GlobalExceptionHandler.java : 53] 
+com.qzx.secondhand.exception.handler.UserDefinedException: null
+	at com.qzx.secondhand.controller.TradeUser.test(TradeUser.java:25)
+	at com.qzx.secondhand.controller.TradeUser$$FastClassBySpringCGLIB$$6b519d1c.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:73)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.qzx.secondhand.controller.TradeUser$$EnhancerBySpringCGLIB$$faa1ce54.test(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-11-28 17:37:58,465 [WARN ] http-nio-8080-exec-1 o.s.w.s.m.m.annotation.ExceptionHandlerExceptionResolver [AbstractHandlerExceptionResolver.java : 208] Resolved [UserDefinedException(msg=error_column_unique)]
+2021-11-28 17:38:10,248 [INFO ] SpringApplicationShutdownHook com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 1948] {dataSource-1} closing ...
+2021-11-28 17:38:10,276 [INFO ] SpringApplicationShutdownHook com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 2020] {dataSource-1} closed
+2021-11-28 17:38:37,098 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [StartupInfoLogger.java : 55] Starting SecondhandApplication using Java 11.0.3 on xiamu8861 with PID 2080 (E:\5，研究生\8，后端\3.java\code\secondhand\target\classes started by 14522 in E:\5，研究生\8，后端\3.java\code\secondhand)
+2021-11-28 17:38:37,100 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [SpringApplication.java : 639] The following profiles are active: dev
+2021-11-28 17:38:37,175 [INFO ] restartedMain o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-11-28 17:38:37,177 [INFO ] restartedMain o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-11-28 17:38:38,152 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-11-28 17:38:38,155 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-11-28 17:38:38,184 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2021-11-28 17:38:38,511 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'thread.pool-com.qzx.secondhand.model.config.TaskThreadPoolConfig' of type [com.qzx.secondhand.model.config.TaskThreadPoolConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-28 17:38:38,512 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'defaultThreadPoolConfig' of type [com.qzx.secondhand.config.DefaultThreadPoolConfig$$EnhancerBySpringCGLIB$$b6e86372] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-28 17:38:38,524 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-28 17:38:38,584 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.datasource.druid-com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties' of type [com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-28 17:38:38,591 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'advisor' of type [org.springframework.aop.support.RegexpMethodPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-28 17:38:38,975 [INFO ] restartedMain org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8080 (http)
+2021-11-28 17:38:38,987 [INFO ] restartedMain org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-11-28 17:38:38,988 [INFO ] restartedMain org.apache.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2021-11-28 17:38:38,988 [INFO ] restartedMain org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-28 17:38:39,075 [INFO ] restartedMain o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2021-11-28 17:38:39,076 [INFO ] restartedMain o.s.b.web.servlet.context.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 1897 ms
+2021-11-28 17:38:39,483 [INFO ] restartedMain c.a.d.spring.boot.autoconfigure.DruidDataSourceAutoConfigure [DruidDataSourceAutoConfigure.java : 56] Init DruidDataSource
+2021-11-28 17:38:42,008 [INFO ] restartedMain com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 1003] {dataSource-1} inited
+2021-11-28 17:38:42,986 [INFO ] restartedMain o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer [OptionalLiveReloadServer.java : 58] LiveReload server is running on port 35729
+2021-11-28 17:38:43,072 [INFO ] restartedMain org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8080"]
+2021-11-28 17:38:43,101 [INFO ] restartedMain org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-28 17:38:43,116 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [StartupInfoLogger.java : 61] Started SecondhandApplication in 6.885 seconds (JVM running for 11.02)
+2021-11-28 17:39:12,964 [INFO ] http-nio-8080-exec-1 o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-28 17:39:12,967 [INFO ] http-nio-8080-exec-1 org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2021-11-28 17:39:12,969 [INFO ] http-nio-8080-exec-1 org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 2 ms
+2021-11-28 17:39:47,911 [ERROR] http-nio-8080-exec-1 com.qzx.secondhand.exception.handler.GlobalExceptionHandler [GlobalExceptionHandler.java : 53] 
+com.qzx.secondhand.exception.handler.UserDefinedException: null
+	at com.qzx.secondhand.controller.TradeUser.test(TradeUser.java:25)
+	at com.qzx.secondhand.controller.TradeUser$$FastClassBySpringCGLIB$$6b519d1c.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:73)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.qzx.secondhand.controller.TradeUser$$EnhancerBySpringCGLIB$$3c93f481.test(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-11-28 17:39:49,237 [WARN ] http-nio-8080-exec-1 o.s.w.s.m.m.annotation.ExceptionHandlerExceptionResolver [AbstractHandlerExceptionResolver.java : 208] Resolved [UserDefinedException(msg=error_column_unique)]
+2021-11-28 17:40:25,230 [ERROR] http-nio-8080-exec-2 com.qzx.secondhand.exception.handler.GlobalExceptionHandler [GlobalExceptionHandler.java : 53] 
+com.qzx.secondhand.exception.handler.UserDefinedException: null
+	at com.qzx.secondhand.controller.TradeUser.test(TradeUser.java:25)
+	at com.qzx.secondhand.controller.TradeUser$$FastClassBySpringCGLIB$$6b519d1c.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:73)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.qzx.secondhand.controller.TradeUser$$EnhancerBySpringCGLIB$$3c93f481.test(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-11-28 17:42:23,418 [WARN ] http-nio-8080-exec-2 o.s.w.s.m.m.annotation.ExceptionHandlerExceptionResolver [AbstractHandlerExceptionResolver.java : 208] Resolved [UserDefinedException(msg=error_column_unique)]
+2021-11-28 17:42:24,260 [INFO ] SpringApplicationShutdownHook com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 1948] {dataSource-1} closing ...
+2021-11-28 17:42:24,280 [INFO ] SpringApplicationShutdownHook com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 2020] {dataSource-1} closed
+2021-11-28 18:17:04,124 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [StartupInfoLogger.java : 55] Starting SecondhandApplication using Java 11.0.3 on xiamu8861 with PID 9864 (E:\5，研究生\8，后端\3.java\code\secondhand\target\classes started by 14522 in E:\5，研究生\8，后端\3.java\code\secondhand)
+2021-11-28 18:17:04,125 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [SpringApplication.java : 639] The following profiles are active: dev
+2021-11-28 18:17:04,186 [INFO ] restartedMain o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-11-28 18:17:04,186 [INFO ] restartedMain o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-11-28 18:17:04,969 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-11-28 18:17:04,972 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-11-28 18:17:04,992 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2021-11-28 18:17:05,238 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'thread.pool-com.qzx.secondhand.model.config.TaskThreadPoolConfig' of type [com.qzx.secondhand.model.config.TaskThreadPoolConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-28 18:17:05,240 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'defaultThreadPoolConfig' of type [com.qzx.secondhand.config.DefaultThreadPoolConfig$$EnhancerBySpringCGLIB$$d25f33f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-28 18:17:05,249 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-28 18:17:05,303 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.datasource.druid-com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties' of type [com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-28 18:17:05,308 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'advisor' of type [org.springframework.aop.support.RegexpMethodPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-28 18:17:05,612 [INFO ] restartedMain org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8080 (http)
+2021-11-28 18:17:05,622 [INFO ] restartedMain org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-11-28 18:17:05,623 [INFO ] restartedMain org.apache.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2021-11-28 18:17:05,623 [INFO ] restartedMain org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-28 18:17:05,696 [INFO ] restartedMain o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2021-11-28 18:17:05,696 [INFO ] restartedMain o.s.b.web.servlet.context.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 1509 ms
+2021-11-28 18:17:05,847 [INFO ] restartedMain c.a.d.spring.boot.autoconfigure.DruidDataSourceAutoConfigure [DruidDataSourceAutoConfigure.java : 56] Init DruidDataSource
+2021-11-28 18:17:07,919 [INFO ] restartedMain com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 1003] {dataSource-1} inited
+2021-11-28 18:17:08,699 [INFO ] restartedMain o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer [OptionalLiveReloadServer.java : 58] LiveReload server is running on port 35729
+2021-11-28 18:17:08,759 [INFO ] restartedMain org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8080"]
+2021-11-28 18:17:08,775 [INFO ] restartedMain org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-28 18:17:08,788 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [StartupInfoLogger.java : 61] Started SecondhandApplication in 5.32 seconds (JVM running for 6.619)
+2021-11-28 18:17:47,913 [INFO ] http-nio-8080-exec-1 o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-28 18:17:47,915 [INFO ] http-nio-8080-exec-1 org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2021-11-28 18:17:47,919 [INFO ] http-nio-8080-exec-1 org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 4 ms
+2021-11-28 18:17:48,063 [WARN ] http-nio-8080-exec-1 com.qzx.secondhand.exception.handler.GlobalExceptionHandler [GlobalExceptionHandler.java : 30] [9001],空指针异常
+com.qzx.secondhand.exception.handler.UserDefinedException: 空指针异常
+	at com.qzx.secondhand.controller.TradeUser.test(TradeUser.java:25)
+	at com.qzx.secondhand.controller.TradeUser$$FastClassBySpringCGLIB$$6b519d1c.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:73)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.qzx.secondhand.controller.TradeUser$$EnhancerBySpringCGLIB$$68932199.test(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-11-28 18:17:48,496 [WARN ] http-nio-8080-exec-1 o.s.w.s.m.m.annotation.ExceptionHandlerExceptionResolver [AbstractHandlerExceptionResolver.java : 208] Resolved [com.qzx.secondhand.exception.handler.UserDefinedException: 空指针异常 错误码:9001 错误信息:空指针异常]
+2021-11-28 18:19:25,740 [INFO ] SpringApplicationShutdownHook com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 1948] {dataSource-1} closing ...
+2021-11-28 18:19:25,760 [INFO ] SpringApplicationShutdownHook com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 2020] {dataSource-1} closed
+2021-11-28 18:19:32,965 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [StartupInfoLogger.java : 55] Starting SecondhandApplication using Java 11.0.3 on xiamu8861 with PID 8204 (E:\5，研究生\8，后端\3.java\code\secondhand\target\classes started by 14522 in E:\5，研究生\8，后端\3.java\code\secondhand)
+2021-11-28 18:19:32,967 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [SpringApplication.java : 639] The following profiles are active: dev
+2021-11-28 18:19:33,026 [INFO ] restartedMain o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-11-28 18:19:33,027 [INFO ] restartedMain o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-11-28 18:19:33,701 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-11-28 18:19:33,703 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-11-28 18:19:33,725 [INFO ] restartedMain o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 201] Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2021-11-28 18:19:33,990 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'thread.pool-com.qzx.secondhand.model.config.TaskThreadPoolConfig' of type [com.qzx.secondhand.model.config.TaskThreadPoolConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-28 18:19:33,992 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'defaultThreadPoolConfig' of type [com.qzx.secondhand.config.DefaultThreadPoolConfig$$EnhancerBySpringCGLIB$$5ab02903] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-28 18:19:34,002 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-28 18:19:34,054 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'spring.datasource.druid-com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties' of type [com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-28 18:19:34,060 [INFO ] restartedMain o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 376] Bean 'advisor' of type [org.springframework.aop.support.RegexpMethodPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-28 18:19:34,364 [INFO ] restartedMain org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8080 (http)
+2021-11-28 18:19:34,374 [INFO ] restartedMain org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-11-28 18:19:34,375 [INFO ] restartedMain org.apache.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2021-11-28 18:19:34,376 [INFO ] restartedMain org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-28 18:19:34,444 [INFO ] restartedMain o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2021-11-28 18:19:34,445 [INFO ] restartedMain o.s.b.web.servlet.context.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 290] Root WebApplicationContext: initialization completed in 1417 ms
+2021-11-28 18:19:34,584 [INFO ] restartedMain c.a.d.spring.boot.autoconfigure.DruidDataSourceAutoConfigure [DruidDataSourceAutoConfigure.java : 56] Init DruidDataSource
+2021-11-28 18:19:36,416 [INFO ] restartedMain com.alibaba.druid.pool.DruidDataSource [DruidDataSource.java : 1003] {dataSource-1} inited
+2021-11-28 18:19:37,207 [INFO ] restartedMain o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer [OptionalLiveReloadServer.java : 58] LiveReload server is running on port 35729
+2021-11-28 18:19:37,275 [INFO ] restartedMain org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8080"]
+2021-11-28 18:19:37,299 [INFO ] restartedMain org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-28 18:19:37,310 [INFO ] restartedMain com.qzx.secondhand.SecondhandApplication [StartupInfoLogger.java : 61] Started SecondhandApplication in 5.108 seconds (JVM running for 7.129)
+2021-11-28 18:19:57,045 [INFO ] http-nio-8080-exec-1 o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-28 18:19:57,049 [INFO ] http-nio-8080-exec-1 org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2021-11-28 18:19:57,050 [INFO ] http-nio-8080-exec-1 org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 1 ms
+2021-11-28 18:19:57,102 [WARN ] http-nio-8080-exec-1 com.qzx.secondhand.exception.handler.GlobalExceptionHandler [GlobalExceptionHandler.java : 30] [9001],空指针异常
+com.qzx.secondhand.exception.handler.UserDefinedException: 空指针异常
+	at com.qzx.secondhand.controller.TradeUser.test(TradeUser.java:25)
+	at com.qzx.secondhand.controller.TradeUser$$FastClassBySpringCGLIB$$6b519d1c.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:73)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.qzx.secondhand.controller.TradeUser$$EnhancerBySpringCGLIB$$57e9e173.test(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-11-28 18:19:57,172 [WARN ] http-nio-8080-exec-1 o.s.w.s.m.m.annotation.ExceptionHandlerExceptionResolver [AbstractHandlerExceptionResolver.java : 208] Resolved [com.qzx.secondhand.exception.handler.UserDefinedException: 空指针异常 错误码:9001 错误信息:空指针异常]

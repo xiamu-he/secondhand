@@ -1,5 +1,8 @@
 package com.qzx.secondhand.controller;
 
+import com.qzx.secondhand.exception.handler.UserDefinedException;
+import com.qzx.secondhand.exception.result.BaseResp;
+import com.qzx.secondhand.exception.statusCode.GlobalCodeEnum;
 import com.qzx.secondhand.service.TradeUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,4 +20,8 @@ public class TradeUser {
     @Autowired
     TradeUserService tradeUserService;
 
+    @GetMapping("/test")
+    public BaseResp<?> test(){
+        throw new UserDefinedException(GlobalCodeEnum.NULL_POINTER_EXCEPTION);
+    }
 }
