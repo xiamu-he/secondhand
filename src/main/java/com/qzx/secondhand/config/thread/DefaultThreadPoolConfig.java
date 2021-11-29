@@ -1,4 +1,4 @@
-package com.qzx.secondhand.config;
+package com.qzx.secondhand.config.thread;
 
 import com.qzx.secondhand.model.config.TaskThreadPoolConfig;
 import lombok.extern.slf4j.Slf4j;

@@ -1,7 +1,7 @@
 package com.qzx.secondhand.exception.handler;
 
 
-import com.qzx.secondhand.exception.result.BaseResp;
+import com.qzx.secondhand.exception.result.Result;
 import com.qzx.secondhand.exception.statusCode.ExceptionUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -23,12 +23,13 @@ import javax.servlet.http.HttpServletResponse;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
-    public BaseResp ServletExceptionHandler(Exception e , HttpServletResponse response) {
+    public Result ServletExceptionHandler(Exception e , HttpServletResponse response) {
         // 设置http返回码
         response.setStatus(ExceptionUtil.getExceptionHttpStatusCode(e));
-        BaseResp baseResp = new BaseResp(ExceptionUtil.getExceptionCustomCode(e));
-        log.warn("[{}],{}",baseResp.getCode(), e.getMessage(), e);
-        return baseResp;
+//        BaseResp baseResp = new BaseResp(ExceptionUtil.getExceptionCustomCode(e));
+        Result result = Result.error(ExceptionUtil.getExceptionCustomCode(e));
+        log.warn("[{}],{}",result.getStatus(), e.getMessage(), e);
+        return result;
     }
 
 }
