@@ -22,9 +22,15 @@ public class TradeUser {
     TradeUserService tradeUserService;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     @GetMapping("/login")
     public BaseResp test(){
         return null;
+=======
+    @GetMapping("/test")
+    public BaseResp<?> test(){
+        throw new UserDefinedException(GlobalCodeEnum.NULL_POINTER_EXCEPTION);
+>>>>>>> fb1e20dc9717269e680040e3ef9f764213943fbc
 =======
     @GetMapping("/test")
     public BaseResp<?> test(){
