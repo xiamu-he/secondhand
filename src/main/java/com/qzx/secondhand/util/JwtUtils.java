@@ -5,7 +5,13 @@ import com.auth0.jwt.JWTCreator;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.qzx.secondhand.model.config.JwtConfig;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.util.Date;
 
 /**
@@ -14,12 +20,24 @@ import java.util.Date;
  * @function
  */
 
+@Component
+@EnableConfigurationProperties(JwtConfig.class)
 public class JwtUtils {
     /**
      * 过期时间为一天
      * TODO 正式上线更换为1天
      */
-    private static final long EXPIRE_TIME = 24 * 60 * 60 * 1000;
+//    private static final long EXPIRE_TIME = 24 * 60 * 60 * 1000;
+    @Autowired
+    JwtConfig jwtConfig;
+
+    @Autowired
+    private static JwtConfig jwtConfig1;
+
+    @PostConstruct
+    public void init() {
+        jwtConfig1 = jwtConfig;
+    }
 
     /**
      * token私钥
@@ -31,17 +49,10 @@ public class JwtUtils {
      * @param roleId //传入payload
      * @return 返回token
      */
-//    public static String getToken(Long roleId){
-//        JWTCreator.Builder builder = JWT.create();
-//        builder.withClaim("roleId",roleId);
-//        builder.withExpiresAt(new Date(System.currentTimeMillis() + EXPIRE_TIME));//设置过期时间
-//        return builder.sign(Algorithm.HMAC256(TOKEN_SECRET)).toString();//设置加密算法返回Token
-//    }
-
     public static String getToken(Long roleId){
         JWTCreator.Builder builder = JWT.create();
         builder.withClaim("roleId",roleId);
-        builder.withExpiresAt(new Date(System.currentTimeMillis() +EXPIRE_TIME));//设置过期时间
+        builder.withExpiresAt(new Date(System.currentTimeMillis() +jwtConfig1.getExpireTime()));//设置过期时间
         return builder.sign(Algorithm.HMAC256(TOKEN_SECRET)).toString();//设置加密算法返回Token
     }
 
@@ -50,18 +61,6 @@ public class JwtUtils {
      * @param token
      * @return
      */
-//    public static Long verifyRoleId(String token){
-//        Long roleId =null;
-//        try {
-//            DecodedJWT verify = JWT.require(Algorithm.HMAC256(TOKEN_SECRET)).build().verify(token);
-//            return verify.getClaim("roleId").asLong();
-//        }
-//        catch (Exception ignored) {
-////            throw new UserDefinedException("token 错误");
-//        }
-//        return roleId;
-//    }
-
     public static String verity(String token) {
         try {
             Algorithm algorithm = Algorithm.HMAC256(TOKEN_SECRET);

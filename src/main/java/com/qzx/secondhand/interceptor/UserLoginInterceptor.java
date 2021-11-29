@@ -1,6 +1,5 @@
 package com.qzx.secondhand.interceptor;
 
-
 import com.qzx.secondhand.exception.handler.UserDefinedException;
 import com.qzx.secondhand.exception.statusCode.GlobalCodeEnum;
 import com.qzx.secondhand.service.TradeUserService;
