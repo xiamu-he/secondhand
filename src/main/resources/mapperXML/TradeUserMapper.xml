@@ -307,4 +307,56 @@
       gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
     where user_id = #{userId,jdbcType=BIGINT}
   </update>
+  <sql id="Join_Column_List">
+    <!--@mbg.generated-->
+    trade_user.user_id as trade_user_user_id,
+    trade_user.user_wx_open_id as trade_user_user_wx_open_id,
+    trade_user.user_mail as trade_user_user_mail,
+    trade_user.user_password as trade_user_user_password,
+    trade_user.user_sex as trade_user_user_sex,
+    trade_user.user_name as trade_user_user_name,
+    trade_user.user_campus_card_number as trade_user_user_campus_card_number,
+    trade_user.user_wx_number as trade_user_user_wx_number,
+    trade_user.user_phone_number as trade_user_user_phone_number,
+    trade_user.user_avatar as trade_user_user_avatar,
+    trade_user.user_address as trade_user_user_address,
+    trade_user.user_level as trade_user_user_level,
+    trade_user.user_score as trade_user_user_score,
+    trade_user.is_dismissed as trade_user_is_dismissed,
+    trade_user.is_certified as trade_user_is_certified,
+    trade_user.user_real_name as trade_user_user_real_name,
+    trade_user.user_college as trade_user_user_college,
+    trade_user.user_class as trade_user_user_class,
+    trade_user.user_campus_card_avatar as trade_user_user_campus_card_avatar,
+    trade_user.user_evaluate_score as trade_user_user_evaluate_score,
+    trade_user.is_beginner as trade_user_is_beginner,
+    trade_user.gmt_create as trade_user_gmt_create,
+    trade_user.gmt_modified as trade_user_gmt_modified
+  </sql>
+  <resultMap id="JoinResultMap" type="com.qzx.secondhand.model.domain.TradeUser">
+    <!--@mbg.generated-->
+    <id column="trade_user_user_id" property="userId"/>
+    <result column="trade_user_user_wx_open_id" property="userWxOpenId"/>
+    <result column="trade_user_user_mail" property="userMail"/>
+    <result column="trade_user_user_password" property="userPassword"/>
+    <result column="trade_user_user_sex" property="userSex"/>
+    <result column="trade_user_user_name" property="userName"/>
+    <result column="trade_user_user_campus_card_number" property="userCampusCardNumber"/>
+    <result column="trade_user_user_wx_number" property="userWxNumber"/>
+    <result column="trade_user_user_phone_number" property="userPhoneNumber"/>
+    <result column="trade_user_user_avatar" property="userAvatar"/>
+    <result column="trade_user_user_address" property="userAddress"/>
+    <result column="trade_user_user_level" property="userLevel"/>
+    <result column="trade_user_user_score" property="userScore"/>
+    <result column="trade_user_is_dismissed" property="isDismissed"/>
+    <result column="trade_user_is_certified" property="isCertified"/>
+    <result column="trade_user_user_real_name" property="userRealName"/>
+    <result column="trade_user_user_college" property="userCollege"/>
+    <result column="trade_user_user_class" property="userClass"/>
+    <result column="trade_user_user_campus_card_avatar" property="userCampusCardAvatar"/>
+    <result column="trade_user_user_evaluate_score" property="userEvaluateScore"/>
+    <result column="trade_user_is_beginner" property="isBeginner"/>
+    <result column="trade_user_gmt_create" property="gmtCreate"/>
+    <result column="trade_user_gmt_modified" property="gmtModified"/>
+  </resultMap>
 </mapper>

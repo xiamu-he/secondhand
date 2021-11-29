@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qzx.secondhand.mapper.TradeCommodityMapper">
+  <resultMap id="BaseResultMap" type="com.qzx.secondhand.model.domain.TradeCommodity">
+    <!--@mbg.generated-->
+    <!--@Table trade_commodity-->
+    <id column="commodity_id" jdbcType="BIGINT" property="commodityId" />
+    <result column="commodity_name" jdbcType="VARCHAR" property="commodityName" />
+    <result column="commodity_publisher_id" jdbcType="BIGINT" property="commodityPublisherId" />
+    <result column="commodity_type" jdbcType="TINYINT" property="commodityType" />
+    <result column="commodity_exchange_name" jdbcType="VARCHAR" property="commodityExchangeName" />
+    <result column="commodity_price" jdbcType="INTEGER" property="commodityPrice" />
+    <result column="commodity_state" jdbcType="TINYINT" property="commodityState" />
+    <result column="commodity_release_time" jdbcType="TIMESTAMP" property="commodityReleaseTime" />
+    <result column="commodity_release_day" jdbcType="INTEGER" property="commodityReleaseDay" />
+    <result column="commodity_dismiss_time" jdbcType="TIMESTAMP" property="commodityDismissTime" />
+    <result column="commodity_avatar" jdbcType="LONGVARCHAR" property="commodityAvatar" />
+    <result column="commodity_description" jdbcType="VARCHAR" property="commodityDescription" />
+    <result column="commodity_scan_count" jdbcType="BIGINT" property="commodityScanCount" />
+    <result column="commodity_classification" jdbcType="TINYINT" property="commodityClassification" />
+    <result column="commodity_second_classification" jdbcType="TINYINT" property="commoditySecondClassification" />
+    <result column="commodity_address" jdbcType="VARCHAR" property="commodityAddress" />
+    <result column="is_locked" jdbcType="BOOLEAN" property="isLocked" />
+    <result column="is_expired" jdbcType="BOOLEAN" property="isExpired" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    commodity_id, commodity_name, commodity_publisher_id, commodity_type, commodity_exchange_name, 
+    commodity_price, commodity_state, commodity_release_time, commodity_release_day, 
+    commodity_dismiss_time, commodity_avatar, commodity_description, commodity_scan_count, 
+    commodity_classification, commodity_second_classification, commodity_address, is_locked, 
+    is_expired, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from trade_commodity
+    where commodity_id = #{commodityId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from trade_commodity
+    where commodity_id = #{commodityId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="commodity_id" keyProperty="commodityId" parameterType="com.qzx.secondhand.model.domain.TradeCommodity" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into trade_commodity (commodity_name, commodity_publisher_id, 
+      commodity_type, commodity_exchange_name, commodity_price, 
+      commodity_state, commodity_release_time, 
+      commodity_release_day, commodity_dismiss_time, 
+      commodity_avatar, commodity_description, 
+      commodity_scan_count, commodity_classification, 
+      commodity_second_classification, commodity_address, 
+      is_locked, is_expired, gmt_create, 
+      gmt_modified)
+    values (#{commodityName,jdbcType=VARCHAR}, #{commodityPublisherId,jdbcType=BIGINT}, 
+      #{commodityType,jdbcType=TINYINT}, #{commodityExchangeName,jdbcType=VARCHAR}, #{commodityPrice,jdbcType=INTEGER}, 
+      #{commodityState,jdbcType=TINYINT}, #{commodityReleaseTime,jdbcType=TIMESTAMP}, 
+      #{commodityReleaseDay,jdbcType=INTEGER}, #{commodityDismissTime,jdbcType=TIMESTAMP}, 
+      #{commodityAvatar,jdbcType=LONGVARCHAR}, #{commodityDescription,jdbcType=VARCHAR}, 
+      #{commodityScanCount,jdbcType=BIGINT}, #{commodityClassification,jdbcType=TINYINT}, 
+      #{commoditySecondClassification,jdbcType=TINYINT}, #{commodityAddress,jdbcType=VARCHAR}, 
+      #{isLocked,jdbcType=BOOLEAN}, #{isExpired,jdbcType=BOOLEAN}, #{gmtCreate,jdbcType=TIMESTAMP}, 
+      #{gmtModified,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="commodity_id" keyProperty="commodityId" parameterType="com.qzx.secondhand.model.domain.TradeCommodity" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into trade_commodity
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="commodityName != null">
+        commodity_name,
+      </if>
+      <if test="commodityPublisherId != null">
+        commodity_publisher_id,
+      </if>
+      <if test="commodityType != null">
+        commodity_type,
+      </if>
+      <if test="commodityExchangeName != null">
+        commodity_exchange_name,
+      </if>
+      <if test="commodityPrice != null">
+        commodity_price,
+      </if>
+      <if test="commodityState != null">
+        commodity_state,
+      </if>
+      <if test="commodityReleaseTime != null">
+        commodity_release_time,
+      </if>
+      <if test="commodityReleaseDay != null">
+        commodity_release_day,
+      </if>
+      <if test="commodityDismissTime != null">
+        commodity_dismiss_time,
+      </if>
+      <if test="commodityAvatar != null">
+        commodity_avatar,
+      </if>
+      <if test="commodityDescription != null">
+        commodity_description,
+      </if>
+      <if test="commodityScanCount != null">
+        commodity_scan_count,
+      </if>
+      <if test="commodityClassification != null">
+        commodity_classification,
+      </if>
+      <if test="commoditySecondClassification != null">
+        commodity_second_classification,
+      </if>
+      <if test="commodityAddress != null">
+        commodity_address,
+      </if>
+      <if test="isLocked != null">
+        is_locked,
+      </if>
+      <if test="isExpired != null">
+        is_expired,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="commodityName != null">
+        #{commodityName,jdbcType=VARCHAR},
+      </if>
+      <if test="commodityPublisherId != null">
+        #{commodityPublisherId,jdbcType=BIGINT},
+      </if>
+      <if test="commodityType != null">
+        #{commodityType,jdbcType=TINYINT},
+      </if>
+      <if test="commodityExchangeName != null">
+        #{commodityExchangeName,jdbcType=VARCHAR},
+      </if>
+      <if test="commodityPrice != null">
+        #{commodityPrice,jdbcType=INTEGER},
+      </if>
+      <if test="commodityState != null">
+        #{commodityState,jdbcType=TINYINT},
+      </if>
+      <if test="commodityReleaseTime != null">
+        #{commodityReleaseTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="commodityReleaseDay != null">
+        #{commodityReleaseDay,jdbcType=INTEGER},
+      </if>
+      <if test="commodityDismissTime != null">
+        #{commodityDismissTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="commodityAvatar != null">
+        #{commodityAvatar,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="commodityDescription != null">
+        #{commodityDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="commodityScanCount != null">
+        #{commodityScanCount,jdbcType=BIGINT},
+      </if>
+      <if test="commodityClassification != null">
+        #{commodityClassification,jdbcType=TINYINT},
+      </if>
+      <if test="commoditySecondClassification != null">
+        #{commoditySecondClassification,jdbcType=TINYINT},
+      </if>
+      <if test="commodityAddress != null">
+        #{commodityAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="isLocked != null">
+        #{isLocked,jdbcType=BOOLEAN},
+      </if>
+      <if test="isExpired != null">
+        #{isExpired,jdbcType=BOOLEAN},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qzx.secondhand.model.domain.TradeCommodity">
+    <!--@mbg.generated-->
+    update trade_commodity
+    <set>
+      <if test="commodityName != null">
+        commodity_name = #{commodityName,jdbcType=VARCHAR},
+      </if>
+      <if test="commodityPublisherId != null">
+        commodity_publisher_id = #{commodityPublisherId,jdbcType=BIGINT},
+      </if>
+      <if test="commodityType != null">
+        commodity_type = #{commodityType,jdbcType=TINYINT},
+      </if>
+      <if test="commodityExchangeName != null">
+        commodity_exchange_name = #{commodityExchangeName,jdbcType=VARCHAR},
+      </if>
+      <if test="commodityPrice != null">
+        commodity_price = #{commodityPrice,jdbcType=INTEGER},
+      </if>
+      <if test="commodityState != null">
+        commodity_state = #{commodityState,jdbcType=TINYINT},
+      </if>
+      <if test="commodityReleaseTime != null">
+        commodity_release_time = #{commodityReleaseTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="commodityReleaseDay != null">
+        commodity_release_day = #{commodityReleaseDay,jdbcType=INTEGER},
+      </if>
+      <if test="commodityDismissTime != null">
+        commodity_dismiss_time = #{commodityDismissTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="commodityAvatar != null">
+        commodity_avatar = #{commodityAvatar,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="commodityDescription != null">
+        commodity_description = #{commodityDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="commodityScanCount != null">
+        commodity_scan_count = #{commodityScanCount,jdbcType=BIGINT},
+      </if>
+      <if test="commodityClassification != null">
+        commodity_classification = #{commodityClassification,jdbcType=TINYINT},
+      </if>
+      <if test="commoditySecondClassification != null">
+        commodity_second_classification = #{commoditySecondClassification,jdbcType=TINYINT},
+      </if>
+      <if test="commodityAddress != null">
+        commodity_address = #{commodityAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="isLocked != null">
+        is_locked = #{isLocked,jdbcType=BOOLEAN},
+      </if>
+      <if test="isExpired != null">
+        is_expired = #{isExpired,jdbcType=BOOLEAN},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where commodity_id = #{commodityId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qzx.secondhand.model.domain.TradeCommodity">
+    <!--@mbg.generated-->
+    update trade_commodity
+    set commodity_name = #{commodityName,jdbcType=VARCHAR},
+      commodity_publisher_id = #{commodityPublisherId,jdbcType=BIGINT},
+      commodity_type = #{commodityType,jdbcType=TINYINT},
+      commodity_exchange_name = #{commodityExchangeName,jdbcType=VARCHAR},
+      commodity_price = #{commodityPrice,jdbcType=INTEGER},
+      commodity_state = #{commodityState,jdbcType=TINYINT},
+      commodity_release_time = #{commodityReleaseTime,jdbcType=TIMESTAMP},
+      commodity_release_day = #{commodityReleaseDay,jdbcType=INTEGER},
+      commodity_dismiss_time = #{commodityDismissTime,jdbcType=TIMESTAMP},
+      commodity_avatar = #{commodityAvatar,jdbcType=LONGVARCHAR},
+      commodity_description = #{commodityDescription,jdbcType=VARCHAR},
+      commodity_scan_count = #{commodityScanCount,jdbcType=BIGINT},
+      commodity_classification = #{commodityClassification,jdbcType=TINYINT},
+      commodity_second_classification = #{commoditySecondClassification,jdbcType=TINYINT},
+      commodity_address = #{commodityAddress,jdbcType=VARCHAR},
+      is_locked = #{isLocked,jdbcType=BOOLEAN},
+      is_expired = #{isExpired,jdbcType=BOOLEAN},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where commodity_id = #{commodityId,jdbcType=BIGINT}
+  </update>
+  <sql id="Join_Column_List">
+    <!--@mbg.generated-->
+    trade_commodity.commodity_id as trade_commodity_commodity_id,
+    trade_commodity.commodity_name as trade_commodity_commodity_name,
+    trade_commodity.commodity_publisher_id as trade_commodity_commodity_publisher_id,
+    trade_commodity.commodity_type as trade_commodity_commodity_type,
+    trade_commodity.commodity_exchange_name as trade_commodity_commodity_exchange_name,
+    trade_commodity.commodity_price as trade_commodity_commodity_price,
+    trade_commodity.commodity_state as trade_commodity_commodity_state,
+    trade_commodity.commodity_release_time as trade_commodity_commodity_release_time,
+    trade_commodity.commodity_release_day as trade_commodity_commodity_release_day,
+    trade_commodity.commodity_dismiss_time as trade_commodity_commodity_dismiss_time,
+    trade_commodity.commodity_avatar as trade_commodity_commodity_avatar,
+    trade_commodity.commodity_description as trade_commodity_commodity_description,
+    trade_commodity.commodity_scan_count as trade_commodity_commodity_scan_count,
+    trade_commodity.commodity_classification as trade_commodity_commodity_classification,
+    trade_commodity.commodity_second_classification as trade_commodity_commodity_second_classification,
+    trade_commodity.commodity_address as trade_commodity_commodity_address,
+    trade_commodity.is_locked as trade_commodity_is_locked,
+    trade_commodity.is_expired as trade_commodity_is_expired,
+    trade_commodity.gmt_create as trade_commodity_gmt_create,
+    trade_commodity.gmt_modified as trade_commodity_gmt_modified
+  </sql>
+  <resultMap id="JoinResultMap" type="com.qzx.secondhand.model.domain.TradeCommodity">
+    <!--@mbg.generated-->
+    <id column="trade_commodity_commodity_id" property="commodityId"/>
+    <result column="trade_commodity_commodity_name" property="commodityName"/>
+    <result column="trade_commodity_commodity_publisher_id" property="commodityPublisherId"/>
+    <result column="trade_commodity_commodity_type" property="commodityType"/>
+    <result column="trade_commodity_commodity_exchange_name" property="commodityExchangeName"/>
+    <result column="trade_commodity_commodity_price" property="commodityPrice"/>
+    <result column="trade_commodity_commodity_state" property="commodityState"/>
+    <result column="trade_commodity_commodity_release_time" property="commodityReleaseTime"/>
+    <result column="trade_commodity_commodity_release_day" property="commodityReleaseDay"/>
+    <result column="trade_commodity_commodity_dismiss_time" property="commodityDismissTime"/>
+    <result column="trade_commodity_commodity_avatar" property="commodityAvatar"/>
+    <result column="trade_commodity_commodity_description" property="commodityDescription"/>
+    <result column="trade_commodity_commodity_scan_count" property="commodityScanCount"/>
+    <result column="trade_commodity_commodity_classification" property="commodityClassification"/>
+    <result column="trade_commodity_commodity_second_classification" property="commoditySecondClassification"/>
+    <result column="trade_commodity_commodity_address" property="commodityAddress"/>
+    <result column="trade_commodity_is_locked" property="isLocked"/>
+    <result column="trade_commodity_is_expired" property="isExpired"/>
+    <result column="trade_commodity_gmt_create" property="gmtCreate"/>
+    <result column="trade_commodity_gmt_modified" property="gmtModified"/>
+  </resultMap>
+</mapper>

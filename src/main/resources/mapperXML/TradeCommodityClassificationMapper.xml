@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qzx.secondhand.mapper.TradeCommodityClassificationMapper">
+  <resultMap id="BaseResultMap" type="com.qzx.secondhand.model.domain.TradeCommodityClassification">
+    <!--@mbg.generated-->
+    <!--@Table trade_commodity_classification-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="classification_id" jdbcType="INTEGER" property="classificationId" />
+    <result column="classification_name" jdbcType="VARCHAR" property="classificationName" />
+    <result column="classification_second_id" jdbcType="INTEGER" property="classificationSecondId" />
+    <result column="classification_second_name" jdbcType="VARCHAR" property="classificationSecondName" />
+    <result column="is_dismissed" jdbcType="TINYINT" property="isDismissed" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, classification_id, classification_name, classification_second_id, classification_second_name, 
+    is_dismissed, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from trade_commodity_classification
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from trade_commodity_classification
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.qzx.secondhand.model.domain.TradeCommodityClassification">
+    <!--@mbg.generated-->
+    insert into trade_commodity_classification (id, classification_id, classification_name, 
+      classification_second_id, classification_second_name, 
+      is_dismissed, gmt_create, gmt_modified
+      )
+    values (#{id,jdbcType=BIGINT}, #{classificationId,jdbcType=INTEGER}, #{classificationName,jdbcType=VARCHAR}, 
+      #{classificationSecondId,jdbcType=INTEGER}, #{classificationSecondName,jdbcType=VARCHAR}, 
+      #{isDismissed,jdbcType=TINYINT}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qzx.secondhand.model.domain.TradeCommodityClassification">
+    <!--@mbg.generated-->
+    insert into trade_commodity_classification
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="classificationId != null">
+        classification_id,
+      </if>
+      <if test="classificationName != null">
+        classification_name,
+      </if>
+      <if test="classificationSecondId != null">
+        classification_second_id,
+      </if>
+      <if test="classificationSecondName != null">
+        classification_second_name,
+      </if>
+      <if test="isDismissed != null">
+        is_dismissed,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="classificationId != null">
+        #{classificationId,jdbcType=INTEGER},
+      </if>
+      <if test="classificationName != null">
+        #{classificationName,jdbcType=VARCHAR},
+      </if>
+      <if test="classificationSecondId != null">
+        #{classificationSecondId,jdbcType=INTEGER},
+      </if>
+      <if test="classificationSecondName != null">
+        #{classificationSecondName,jdbcType=VARCHAR},
+      </if>
+      <if test="isDismissed != null">
+        #{isDismissed,jdbcType=TINYINT},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qzx.secondhand.model.domain.TradeCommodityClassification">
+    <!--@mbg.generated-->
+    update trade_commodity_classification
+    <set>
+      <if test="classificationId != null">
+        classification_id = #{classificationId,jdbcType=INTEGER},
+      </if>
+      <if test="classificationName != null">
+        classification_name = #{classificationName,jdbcType=VARCHAR},
+      </if>
+      <if test="classificationSecondId != null">
+        classification_second_id = #{classificationSecondId,jdbcType=INTEGER},
+      </if>
+      <if test="classificationSecondName != null">
+        classification_second_name = #{classificationSecondName,jdbcType=VARCHAR},
+      </if>
+      <if test="isDismissed != null">
+        is_dismissed = #{isDismissed,jdbcType=TINYINT},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qzx.secondhand.model.domain.TradeCommodityClassification">
+    <!--@mbg.generated-->
+    update trade_commodity_classification
+    set classification_id = #{classificationId,jdbcType=INTEGER},
+      classification_name = #{classificationName,jdbcType=VARCHAR},
+      classification_second_id = #{classificationSecondId,jdbcType=INTEGER},
+      classification_second_name = #{classificationSecondName,jdbcType=VARCHAR},
+      is_dismissed = #{isDismissed,jdbcType=TINYINT},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <sql id="Join_Column_List">
+    <!--@mbg.generated-->
+    trade_commodity_classification.id as trade_commodity_classification_id,
+    trade_commodity_classification.classification_id as trade_commodity_classification_classification_id,
+    trade_commodity_classification.classification_name as trade_commodity_classification_classification_name,
+    trade_commodity_classification.classification_second_id as trade_commodity_classification_classification_second_id,
+    trade_commodity_classification.classification_second_name as
+    trade_commodity_classification_classification_second_name,
+    trade_commodity_classification.is_dismissed as trade_commodity_classification_is_dismissed,
+    trade_commodity_classification.gmt_create as trade_commodity_classification_gmt_create,
+    trade_commodity_classification.gmt_modified as trade_commodity_classification_gmt_modified
+  </sql>
+  <resultMap id="JoinResultMap" type="com.qzx.secondhand.model.domain.TradeCommodityClassification">
+    <!--@mbg.generated-->
+    <id column="trade_commodity_classification_id" property="id"/>
+    <result column="trade_commodity_classification_classification_id" property="classificationId"/>
+    <result column="trade_commodity_classification_classification_name" property="classificationName"/>
+    <result column="trade_commodity_classification_classification_second_id" property="classificationSecondId"/>
+    <result column="trade_commodity_classification_classification_second_name" property="classificationSecondName"/>
+    <result column="trade_commodity_classification_is_dismissed" property="isDismissed"/>
+    <result column="trade_commodity_classification_gmt_create" property="gmtCreate"/>
+    <result column="trade_commodity_classification_gmt_modified" property="gmtModified"/>
+  </resultMap>
+</mapper>
