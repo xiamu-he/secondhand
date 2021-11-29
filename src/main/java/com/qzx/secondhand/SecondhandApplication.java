@@ -1,5 +1,6 @@
 package com.qzx.secondhand;
 
+import com.qzx.secondhand.util.JwtUtils;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,9 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 @MapperScan("com.qzx.secondhand.mapper")
 public class SecondhandApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(SecondhandApplication.class, args);
     }
-
 }

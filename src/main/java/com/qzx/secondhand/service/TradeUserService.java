@@ -33,7 +33,7 @@ public class TradeUserService{
         return tradeUserMapper.insertSelective(record);
     }
 
-    
+    @Async
     public TradeUser selectByPrimaryKey(Long userId) {
         return tradeUserMapper.selectByPrimaryKey(userId);
     }

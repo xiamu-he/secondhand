@@ -77,3 +77,8 @@ thread:
     maxPoolSize: 20
     keepAliveSeconds: 300
     queueCapacity: 40
+
+user:
+  token:
+    # 7*24*60*60*1000 测试环境超时时间：一周
+    expireTime: 604800000
