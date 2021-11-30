@@ -119,52 +119,20 @@
   </resultMap>
 
   <select id="selectCollectionVoJoin" resultMap="CollectionVoJoin">
-<!--    select-->
+    select
+    a3.classification_name,a3.classification_second_name,
+    a2.commodity_id,a2.commodity_name,a2.commodity_publisher_id,a2.commodity_type,a2.commodity_exchange_name,a2.commodity_price,
+    a2.commodity_state,a2.commodity_release_time,a2.commodity_avatar,
+    a2.commodity_description,a2.commodity_scan_count,
+    a2.commodity_address,a2.commodity_classification,a2.commodity_second_classification,
+    a4.user_id,a4.user_name,
+    a4.user_wx_number,a4.user_phone_number,a4.user_avatar
 
-<!--    a3.classification_id,a3.classification_second_id,-->
-<!--    a3.classification_name,a3.classification_second_name,-->
-<!--    a2.commodity_id,a2.commodity_name,a2.commodity_publisher_id,a2.commodity_type,a2.commodity_exchange_name,a2.commodity_price,-->
-<!--    a2.commodity_state,a2.commodity_release_time,a2.commodity_avatar,-->
-<!--    a2.commodity_description,a2.commodity_scan_count,-->
-<!--    a2.commodity_address,-->
-<!--    a4.user_id,a4.user_name,-->
-<!--    a4.user_wx_number,a4.user_phone_number,a4.user_avatar-->
-
-<!--    from trade_collection as a1-->
-<!--    left join trade_commodity as a2 on a2.commodity_id = a1.commodity_id-->
-<!--    left join trade_commodity_classification as a3 on a2.commodity_second_classification=a3.classification_second_id-->
-<!--    left join trade_user as a4 on a4.user_id = a2.commodity_publisher_id-->
-<!--    where a1.user_id = #{id};-->
-
-    select a2.commodity_id
-    ,a2.commodity_name
-    ,a2.commodity_publisher_id
-    ,a4.user_name
-    ,a4.user_avatar
-    ,a4.user_phone_number
-    ,a4.user_wx_number
-    ,a2.commodity_type
-    ,a2.commodity_exchange_name
-    ,a2.commodity_price
-    ,a2.commodity_state
-    ,a2.commodity_release_time
-    ,a2.commodity_avatar
-    ,a2.commodity_description
-    ,a2.commodity_scan_count
-    ,a2.commodity_classification
-    ,a2.commodity_classification
-    ,a3.classification_name
-    ,a2.commodity_second_classification
-    ,a3.classification_second_name
-    ,a2.commodity_address
-    from trade_collection a1
-    left join trade_commodity a2
-    on a1.commodity_id = a2.commodity_id
-    left join trade_commodity_classification a3
-    on a2.commodity_second_classification = a3.classification_second_id
-    left join trade_user a4
-    on a2.commodity_publisher_id = a4.user_id
-    where a1.user_id = #{id};
-
+    from trade_collection as a1
+    left join trade_commodity as a2 on a2.commodity_id = a1.commodity_id
+    left join trade_commodity_classification as a3 on a2.commodity_second_classification=a3.classification_second_id
+    left join trade_user as a4 on a4.user_id = a2.commodity_publisher_id
+    where a1.user_id = #{id}
+    order by a1.gmt_create desc
   </select>
 </mapper>
