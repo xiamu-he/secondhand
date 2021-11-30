@@ -137,27 +137,4 @@
       gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <sql id="Join_Column_List">
-    <!--@mbg.generated-->
-    trade_commodity_classification.id as trade_commodity_classification_id,
-    trade_commodity_classification.classification_id as trade_commodity_classification_classification_id,
-    trade_commodity_classification.classification_name as trade_commodity_classification_classification_name,
-    trade_commodity_classification.classification_second_id as trade_commodity_classification_classification_second_id,
-    trade_commodity_classification.classification_second_name as
-    trade_commodity_classification_classification_second_name,
-    trade_commodity_classification.is_dismissed as trade_commodity_classification_is_dismissed,
-    trade_commodity_classification.gmt_create as trade_commodity_classification_gmt_create,
-    trade_commodity_classification.gmt_modified as trade_commodity_classification_gmt_modified
-  </sql>
-  <resultMap id="JoinResultMap" type="com.qzx.secondhand.model.domain.TradeCommodityClassification">
-    <!--@mbg.generated-->
-    <id column="trade_commodity_classification_id" property="id"/>
-    <result column="trade_commodity_classification_classification_id" property="classificationId"/>
-    <result column="trade_commodity_classification_classification_name" property="classificationName"/>
-    <result column="trade_commodity_classification_classification_second_id" property="classificationSecondId"/>
-    <result column="trade_commodity_classification_classification_second_name" property="classificationSecondName"/>
-    <result column="trade_commodity_classification_is_dismissed" property="isDismissed"/>
-    <result column="trade_commodity_classification_gmt_create" property="gmtCreate"/>
-    <result column="trade_commodity_classification_gmt_modified" property="gmtModified"/>
-  </resultMap>
 </mapper>

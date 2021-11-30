@@ -1,13 +1,10 @@
 package com.qzx.secondhand.mapper;
-import org.apache.ibatis.annotations.Param;
 
 import com.qzx.secondhand.model.domain.TradeUser;
 
-import java.util.List;
-
 /**
 @author qzx
-@create 2021-11-25 20:32
+@create 2021-11-30 17:24
 @function
 */
 public interface TradeUserMapper {

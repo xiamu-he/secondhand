@@ -115,7 +115,7 @@ public class CollectionVO {
      * 商品二级分类标签
      */
     @ApiModelProperty(value = "商品二级分类标签")
-    private Byte commoditySecondClassification;
+    private Long commoditySecondClassification;
 
     /**
      * 二级标签名称

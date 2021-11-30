@@ -94,22 +94,77 @@
     where collection_id = #{collectionId,jdbcType=BIGINT}
   </update>
 
-  <sql id="Join_Column_List">
-    <!--@mbg.generated-->
-    trade_collection.collection_id as trade_collection_collection_id,
-    trade_collection.user_id as trade_collection_user_id,
-    trade_collection.commodity_id as trade_collection_commodity_id,
-    trade_collection.gmt_create as trade_collection_gmt_create,
-    trade_collection.gmt_modified as trade_collection_gmt_modified
-  </sql>
 
-
-  <resultMap id="JoinResultMap" type="com.qzx.secondhand.model.domain.TradeCollection">
-    <!--@mbg.generated-->
-    <id column="trade_collection_collection_id" property="collectionId"/>
-    <result column="trade_collection_user_id" property="userId"/>
-    <result column="trade_collection_commodity_id" property="commodityId"/>
-    <result column="trade_collection_gmt_create" property="gmtCreate"/>
-    <result column="trade_collection_gmt_modified" property="gmtModified"/>
+  <resultMap id="CollectionVoJoin" type="com.qzx.secondhand.model.vo.user.CollectionVO">
+    <result column="commodity_id" property="commodityId"/>
+    <result column="commodity_name" property="commodityName"/>
+    <result column="commodity_publisher_id" property="commodityPublisherId"/>
+    <result column="user_name" property="userName"/>
+    <result column="user_avatar" property="userAvatar"/>
+    <result column="user_phone_number" property="userPhoneNumber"/>
+    <result column="user_wx_number" property="userWxNumber"/>
+    <result column="commodity_type" property="commodityType"/>
+    <result column="commodity_exchange_name" property="commodityExchangeName"/>
+    <result column="commodity_price" property="commodityPrice"/>
+    <result column="commodity_state" property="commodityState"/>
+    <result column="commodity_release_time" property="commodityReleaseTime"/>
+    <result column="commodity_avatar" property="commodityAvatar"/>
+    <result column="commodity_description" property="commodityDescription"/>
+    <result column="commodity_scan_count" property="commodityScanCount"/>
+    <result column="commodity_classification" property="commodityClassification"/>
+    <result column="classification_name" property="classificationName"/>
+    <result column="commodity_second_classification" property="commoditySecondClassification"/>
+    <result column="classification_second_name" property="classificationSecondName"/>
+    <result column="commodity_address" property="commodityAddress"/>
   </resultMap>
+
+  <select id="selectCollectionVoJoin" resultMap="CollectionVoJoin">
+<!--    select-->
+
+<!--    a3.classification_id,a3.classification_second_id,-->
+<!--    a3.classification_name,a3.classification_second_name,-->
+<!--    a2.commodity_id,a2.commodity_name,a2.commodity_publisher_id,a2.commodity_type,a2.commodity_exchange_name,a2.commodity_price,-->
+<!--    a2.commodity_state,a2.commodity_release_time,a2.commodity_avatar,-->
+<!--    a2.commodity_description,a2.commodity_scan_count,-->
+<!--    a2.commodity_address,-->
+<!--    a4.user_id,a4.user_name,-->
+<!--    a4.user_wx_number,a4.user_phone_number,a4.user_avatar-->
+
+<!--    from trade_collection as a1-->
+<!--    left join trade_commodity as a2 on a2.commodity_id = a1.commodity_id-->
+<!--    left join trade_commodity_classification as a3 on a2.commodity_second_classification=a3.classification_second_id-->
+<!--    left join trade_user as a4 on a4.user_id = a2.commodity_publisher_id-->
+<!--    where a1.user_id = #{id};-->
+
+    select a2.commodity_id
+    ,a2.commodity_name
+    ,a2.commodity_publisher_id
+    ,a4.user_name
+    ,a4.user_avatar
+    ,a4.user_phone_number
+    ,a4.user_wx_number
+    ,a2.commodity_type
+    ,a2.commodity_exchange_name
+    ,a2.commodity_price
+    ,a2.commodity_state
+    ,a2.commodity_release_time
+    ,a2.commodity_avatar
+    ,a2.commodity_description
+    ,a2.commodity_scan_count
+    ,a2.commodity_classification
+    ,a2.commodity_classification
+    ,a3.classification_name
+    ,a2.commodity_second_classification
+    ,a3.classification_second_name
+    ,a2.commodity_address
+    from trade_collection a1
+    left join trade_commodity a2
+    on a1.commodity_id = a2.commodity_id
+    left join trade_commodity_classification a3
+    on a2.commodity_second_classification = a3.classification_second_id
+    left join trade_user a4
+    on a2.commodity_publisher_id = a4.user_id
+    where a1.user_id = #{id};
+
+  </select>
 </mapper>

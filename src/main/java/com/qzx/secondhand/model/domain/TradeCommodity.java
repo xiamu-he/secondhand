@@ -5,20 +5,22 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.util.Date;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
 @author qzx
-@create 2021-11-29 23:28
+@create 2021-11-30 17:29
 @function
 */
 @ApiModel(value="trade_commodity")
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class TradeCommodity implements Serializable {
-    @ApiModelProperty(value="商品id")
+    @ApiModelProperty(value="")
     private Long commodityId;
 
     /**

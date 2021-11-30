@@ -34,7 +34,4 @@ public class TradeUser {
         return tradeUserService.getPersonInfoDetail(id);
     }
 
-
-
-
 }
