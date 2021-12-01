@@ -1,8 +1,9 @@
 package com.qzx.secondhand.model.vo.user;
 
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
+import java.util.List;
+
 import lombok.Data;
 
 
@@ -86,6 +87,12 @@ public class CollectionVO {
      */
     @ApiModelProperty(value = "商品图片")
     private String commodityAvatar;
+
+    /**
+     * 商品图片集合
+     */
+    @ApiModelProperty("商品图片集合")
+    private List<String> commodityAvatarList;
 
     /**
      * 商品描述

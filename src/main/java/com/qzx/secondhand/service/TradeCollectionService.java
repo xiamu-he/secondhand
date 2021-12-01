@@ -2,7 +2,9 @@ package com.qzx.secondhand.service;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.qzx.secondhand.exception.result.Result;
 import com.qzx.secondhand.model.vo.user.CollectionVO;
+import com.qzx.secondhand.util.file.PictureUtils;
 import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -57,8 +59,12 @@ public class TradeCollectionService{
         return tradeCollectionMapper.selectCollectionVoJoin(id);
     }
 
-    public PageInfo<CollectionVO> selectCollectionVoJoinwithPage(Integer page, Integer pageSize, Long id) {
+    public Result selectCollectionVoJoinwithPage(Integer page, Integer pageSize, Long id) {
         PageHelper.startPage(page, pageSize);
-        return new PageInfo<>(tradeCollectionMapper.selectCollectionVoJoin(id));
+        List<CollectionVO> collectionVOList = new PageInfo<CollectionVO>(tradeCollectionMapper.selectCollectionVoJoin(id)).getList();
+        for(CollectionVO collectionVO:collectionVOList){
+            collectionVO.setCommodityAvatarList(PictureUtils.Picturestr2List(collectionVO.getCommodityAvatar()));
+        }
+        return Result.success(collectionVOList);
     }
 }

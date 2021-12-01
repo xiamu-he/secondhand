@@ -1,10 +1,17 @@
 package com.qzx.secondhand.service;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.qzx.secondhand.exception.result.Result;
+import com.qzx.secondhand.model.vo.user.CommodityVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.qzx.secondhand.mapper.TradeCommodityMapper;
 import com.qzx.secondhand.model.domain.TradeCommodity;
+
+import java.util.List;
+
 /**
 @author qzx
 @create 2021-11-30 17:29
@@ -46,4 +53,9 @@ public class TradeCommodityService{
         return tradeCommodityMapper.updateByPrimaryKey(record);
     }
 
+
+    public Result selectCommodityVoJoinwithPage(int page, int pageSize, Long id, Boolean experied) {
+        PageHelper.startPage(page, pageSize);
+        return Result.success(new PageInfo<CommodityVO>(tradeCommodityMapper.selectCommodityVoJoin(id, experied)).getList());
+    }
 }

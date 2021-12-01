@@ -4,6 +4,7 @@ import com.qzx.secondhand.exception.handler.UserDefinedException;
 import com.qzx.secondhand.exception.result.Result;
 import com.qzx.secondhand.exception.statusCode.GlobalCodeEnum;
 import com.qzx.secondhand.mapper.TradeUserMapper;
+import com.qzx.secondhand.model.vo.user.UserBriefInfo;
 import com.qzx.secondhand.model.vo.user.UserDetailInfo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,6 +61,16 @@ public class TradeUserService {
         UserDetailInfo userDetailInfo = new UserDetailInfo();
         BeanUtils.copyProperties(tradeUser, userDetailInfo);
         return Result.success(userDetailInfo);
+    }
+
+    public Result getPersonInfoBrief(Long id) {
+        TradeUser tradeUser = tradeUserMapper.selectByPrimaryKey(id);
+        if (tradeUser == null) {
+            throw new UserDefinedException(GlobalCodeEnum.USER_NOT_EXIST);
+        }
+        UserBriefInfo userBriefInfo = new UserBriefInfo();
+        BeanUtils.copyProperties(tradeUser, userBriefInfo);
+        return Result.success(userBriefInfo);
     }
 }
 
