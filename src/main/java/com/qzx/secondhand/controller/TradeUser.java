@@ -39,8 +39,8 @@ public class TradeUser {
 
     @ApiOperation(value = "查询用户简要信息")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "token", value = "凭据", required = true, paramType = "header"),
-            @ApiImplicitParam(name = "id", value = "用户id", required = true, paramType = "query")
+            @ApiImplicitParam(name = "token", value = "凭据", required = true, dataTypeClass = String.class,paramType = "header"),
+            @ApiImplicitParam(name = "id", value = "用户id", required = true, dataTypeClass = Long.class,paramType = "query")
     })
     @GetMapping(value = "/personal/info/brief")
     public Result getPersonInfoBrief(@RequestParam(value = "id") Long id) {
@@ -50,8 +50,8 @@ public class TradeUser {
 
     @ApiOperation("查询用户详细信息")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "token", value = "凭据", required = true, paramType = "header"),
-            @ApiImplicitParam(name = "id", value = "用户id", required = true, paramType = "query")
+            @ApiImplicitParam(name = "token", value = "凭据", required = true, dataTypeClass = String.class,paramType = "header"),
+            @ApiImplicitParam(name = "id", value = "用户id", required = true, dataTypeClass = Long.class,paramType = "query")
     })
     @GetMapping("/personal/info/detail")
     public Result getPersonInfoDetail(@RequestParam("id") Long id) {
@@ -61,10 +61,10 @@ public class TradeUser {
 
     @ApiOperation("获取收藏列表")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "token", value = "凭据", required = true, paramType = "header"),
-            @ApiImplicitParam(name = "id", value = "用户id", required = true, paramType = "query"),
-            @ApiImplicitParam(name = "pageSize", value = "页面大小", required = true, paramType = "query"),
-            @ApiImplicitParam(name = "page", value = "页码", required = true, paramType = "query")
+            @ApiImplicitParam(name = "token", value = "凭据", required = true,dataTypeClass = String.class, paramType = "header"),
+            @ApiImplicitParam(name = "id", value = "用户id", required = true, dataTypeClass = Long.class,paramType = "query"),
+            @ApiImplicitParam(name = "pageSize", value = "页面大小", required = true, dataTypeClass = Integer.class,paramType = "query"),
+            @ApiImplicitParam(name = "page", value = "页码", required = true, dataTypeClass = Integer.class,paramType = "query")
     })
     @GetMapping(value = "/commodity/collection")
     public Result getCollectionList(@RequestParam("id") Long id,
@@ -75,11 +75,11 @@ public class TradeUser {
 
     @ApiOperation("获取用户发布的商品列表")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "token", value = "凭据", required = true, paramType = "header"),
-            @ApiImplicitParam(name = "id", value = "用户id", required = true, paramType = "query"),
-            @ApiImplicitParam(name = "pageSize", value = "页面大小", required = true, paramType = "query"),
-            @ApiImplicitParam(name = "page", value = "页码", required = true, paramType = "query"),
-            @ApiImplicitParam(name = "expired",value = "是否按商品是否过期进行排序",required = false,paramType = "query")
+            @ApiImplicitParam(name = "token", value = "凭据", required = true,dataTypeClass = String.class, paramType = "header"),
+            @ApiImplicitParam(name = "id", value = "用户id", required = true, dataTypeClass = Long.class,paramType = "query"),
+            @ApiImplicitParam(name = "pageSize", value = "页面大小", required = true, dataTypeClass = Integer.class,paramType = "query"),
+            @ApiImplicitParam(name = "page", value = "页码", required = true, dataTypeClass = Integer.class,paramType = "query"),
+            @ApiImplicitParam(name = "expired",value = "是否按商品是否过期进行排序",required = false,dataTypeClass = Boolean.class,paramType = "query")
     })
     @GetMapping("/commodity/publish")
     public Result getPublishList(@RequestParam(value = "id") Long id,
