@@ -1,10 +1,17 @@
 package com.qzx.secondhand.service;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.qzx.secondhand.model.vo.user.CollectionVO;
+import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.qzx.secondhand.model.domain.TradeCollection;
 import com.qzx.secondhand.mapper.TradeCollectionMapper;
+
+import java.util.List;
+
 /**
 @author qzx
 @create 2021-11-30 17:29
@@ -46,4 +53,12 @@ public class TradeCollectionService{
         return tradeCollectionMapper.updateByPrimaryKey(record);
     }
 
+    public List<CollectionVO> selectCollectionVoJoin(Long id) {
+        return tradeCollectionMapper.selectCollectionVoJoin(id);
+    }
+
+    public PageInfo<CollectionVO> selectCollectionVoJoinwithPage(Integer page, Integer pageSize, Long id) {
+        PageHelper.startPage(page, pageSize);
+        return new PageInfo<>(tradeCollectionMapper.selectCollectionVoJoin(id));
+    }
 }
