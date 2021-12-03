@@ -4,6 +4,7 @@ import com.qzx.secondhand.exception.result.Result;
 import com.qzx.secondhand.model.domain.TradeCollection;
 import com.qzx.secondhand.service.TradeCollectionService;
 import com.qzx.secondhand.service.TradeCommodityService;
+import com.qzx.secondhand.service.TradeDesireProductService;
 import com.qzx.secondhand.service.TradeUserService;
 import io.lettuce.core.cluster.pubsub.api.sync.PubSubNodeSelection;
 import io.swagger.annotations.ApiImplicitParam;
@@ -30,6 +31,9 @@ public class TradeUser {
 
     @Autowired
     TradeCommodityService tradeCommodityService;
+
+    @Autowired
+    TradeDesireProductService tradeDesireProductService;
 
     @GetMapping("/login")
     public Result login() {
@@ -87,5 +91,21 @@ public class TradeUser {
                                  @RequestParam(value = "page", defaultValue = "1") Integer page,
                                  @RequestParam(value = "expired", defaultValue = "false", required = false) Boolean expired) {
         return tradeCommodityService.selectCommodityVoJoinwithPage(page, pageSize, id, expired);
+    }
+
+    @ApiOperation("获取用户求购商品列表")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "token", value = "凭据", required = true,dataTypeClass = String.class, paramType = "header"),
+            @ApiImplicitParam(name = "id", value = "用户id", required = true, dataTypeClass = Long.class,paramType = "query"),
+            @ApiImplicitParam(name = "pageSize", value = "页面大小", required = true, dataTypeClass = Integer.class,paramType = "query"),
+            @ApiImplicitParam(name = "page", value = "页码", required = true, dataTypeClass = Integer.class,paramType = "query"),
+            @ApiImplicitParam(name = "expired",value = "是否按商品是否过期进行排序",required = false,dataTypeClass = Boolean.class,paramType = "query")
+    })
+    @GetMapping(value = "/desire/product/sell")
+    public Result getDesireProductList(@RequestParam(value = "id") Long id,
+                                       @RequestParam(value = "pageSize", defaultValue = "8") Integer pageSize,
+                                       @RequestParam(value = "page", defaultValue = "1") Integer page,
+                                       @RequestParam(value = "expired", defaultValue = "false", required = false) Boolean expired){
+        return tradeDesireProductService.selectDesireProductVOwithPage(page,pageSize,id,expired);
     }
 }

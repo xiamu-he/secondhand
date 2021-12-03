@@ -1,5 +1,6 @@
 package com.qzx.secondhand.model.vo.user;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.qzx.secondhand.mapper.TradeCommodityMapper;
@@ -58,6 +59,7 @@ public class CommodityVO {
      * 商品上架时间
      */
     @ApiModelProperty(value = "商品上架时间")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date commodityReleaseTime;
 
     /**

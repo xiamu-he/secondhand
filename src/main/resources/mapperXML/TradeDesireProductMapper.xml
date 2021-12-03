@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qzx.secondhand.mapper.TradeDesireProductMapper">
+    <resultMap id="BaseResultMap" type="com.qzx.secondhand.model.domain.TradeDesireProduct">
+        <!--@mbg.generated-->
+        <!--@Table trade_desire_product-->
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="product_publisher_id" jdbcType="BIGINT" property="productPublisherId"/>
+        <result column="product_name" jdbcType="VARCHAR" property="productName"/>
+        <result column="product_price" jdbcType="INTEGER" property="productPrice"/>
+        <result column="product_state" jdbcType="TINYINT" property="productState"/>
+        <result column="product_image" jdbcType="VARCHAR" property="productImage"/>
+        <result column="product_release_time" jdbcType="TIMESTAMP" property="productReleaseTime"/>
+        <result column="product_release_day" jdbcType="INTEGER" property="productReleaseDay"/>
+        <result column="product_dismiss_time" jdbcType="TIMESTAMP" property="productDismissTime"/>
+        <result column="product_description" jdbcType="VARCHAR" property="productDescription"/>
+        <result column="product_scan_count" jdbcType="BIGINT" property="productScanCount"/>
+        <result column="product_address" jdbcType="VARCHAR" property="productAddress"/>
+        <result column="is_expired" jdbcType="BOOLEAN" property="isExpired"/>
+        <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate"/>
+        <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, product_publisher_id, product_name, product_price, product_state, product_image,
+        product_release_time, product_release_day, product_dismiss_time, product_description,
+        product_scan_count, product_address, is_expired, gmt_create, gmt_modified
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from trade_desire_product
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        <!--@mbg.generated-->
+        delete
+        from trade_desire_product
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id"
+            parameterType="com.qzx.secondhand.model.domain.TradeDesireProduct" useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into trade_desire_product (product_publisher_id, product_name, product_price,
+                                          product_state, product_image, product_release_time,
+                                          product_release_day, product_dismiss_time,
+                                          product_description, product_scan_count, product_address,
+                                          is_expired, gmt_create, gmt_modified)
+        values (#{productPublisherId,jdbcType=BIGINT}, #{productName,jdbcType=VARCHAR},
+                #{productPrice,jdbcType=INTEGER},
+                #{productState,jdbcType=TINYINT}, #{productImage,jdbcType=VARCHAR},
+                #{productReleaseTime,jdbcType=TIMESTAMP},
+                #{productReleaseDay,jdbcType=INTEGER}, #{productDismissTime,jdbcType=TIMESTAMP},
+                #{productDescription,jdbcType=VARCHAR}, #{productScanCount,jdbcType=BIGINT},
+                #{productAddress,jdbcType=VARCHAR},
+                #{isExpired,jdbcType=BOOLEAN}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id"
+            parameterType="com.qzx.secondhand.model.domain.TradeDesireProduct" useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into trade_desire_product
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="productPublisherId != null">
+                product_publisher_id,
+            </if>
+            <if test="productName != null">
+                product_name,
+            </if>
+            <if test="productPrice != null">
+                product_price,
+            </if>
+            <if test="productState != null">
+                product_state,
+            </if>
+            <if test="productImage != null">
+                product_image,
+            </if>
+            <if test="productReleaseTime != null">
+                product_release_time,
+            </if>
+            <if test="productReleaseDay != null">
+                product_release_day,
+            </if>
+            <if test="productDismissTime != null">
+                product_dismiss_time,
+            </if>
+            <if test="productDescription != null">
+                product_description,
+            </if>
+            <if test="productScanCount != null">
+                product_scan_count,
+            </if>
+            <if test="productAddress != null">
+                product_address,
+            </if>
+            <if test="isExpired != null">
+                is_expired,
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create,
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="productPublisherId != null">
+                #{productPublisherId,jdbcType=BIGINT},
+            </if>
+            <if test="productName != null">
+                #{productName,jdbcType=VARCHAR},
+            </if>
+            <if test="productPrice != null">
+                #{productPrice,jdbcType=INTEGER},
+            </if>
+            <if test="productState != null">
+                #{productState,jdbcType=TINYINT},
+            </if>
+            <if test="productImage != null">
+                #{productImage,jdbcType=VARCHAR},
+            </if>
+            <if test="productReleaseTime != null">
+                #{productReleaseTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="productReleaseDay != null">
+                #{productReleaseDay,jdbcType=INTEGER},
+            </if>
+            <if test="productDismissTime != null">
+                #{productDismissTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="productDescription != null">
+                #{productDescription,jdbcType=VARCHAR},
+            </if>
+            <if test="productScanCount != null">
+                #{productScanCount,jdbcType=BIGINT},
+            </if>
+            <if test="productAddress != null">
+                #{productAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="isExpired != null">
+                #{isExpired,jdbcType=BOOLEAN},
+            </if>
+            <if test="gmtCreate != null">
+                #{gmtCreate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="gmtModified != null">
+                #{gmtModified,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.qzx.secondhand.model.domain.TradeDesireProduct">
+        <!--@mbg.generated-->
+        update trade_desire_product
+        <set>
+            <if test="productPublisherId != null">
+                product_publisher_id = #{productPublisherId,jdbcType=BIGINT},
+            </if>
+            <if test="productName != null">
+                product_name = #{productName,jdbcType=VARCHAR},
+            </if>
+            <if test="productPrice != null">
+                product_price = #{productPrice,jdbcType=INTEGER},
+            </if>
+            <if test="productState != null">
+                product_state = #{productState,jdbcType=TINYINT},
+            </if>
+            <if test="productImage != null">
+                product_image = #{productImage,jdbcType=VARCHAR},
+            </if>
+            <if test="productReleaseTime != null">
+                product_release_time = #{productReleaseTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="productReleaseDay != null">
+                product_release_day = #{productReleaseDay,jdbcType=INTEGER},
+            </if>
+            <if test="productDismissTime != null">
+                product_dismiss_time = #{productDismissTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="productDescription != null">
+                product_description = #{productDescription,jdbcType=VARCHAR},
+            </if>
+            <if test="productScanCount != null">
+                product_scan_count = #{productScanCount,jdbcType=BIGINT},
+            </if>
+            <if test="productAddress != null">
+                product_address = #{productAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="isExpired != null">
+                is_expired = #{isExpired,jdbcType=BOOLEAN},
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.qzx.secondhand.model.domain.TradeDesireProduct">
+        <!--@mbg.generated-->
+        update trade_desire_product
+        set product_publisher_id = #{productPublisherId,jdbcType=BIGINT},
+            product_name         = #{productName,jdbcType=VARCHAR},
+            product_price        = #{productPrice,jdbcType=INTEGER},
+            product_state        = #{productState,jdbcType=TINYINT},
+            product_image        = #{productImage,jdbcType=VARCHAR},
+            product_release_time = #{productReleaseTime,jdbcType=TIMESTAMP},
+            product_release_day  = #{productReleaseDay,jdbcType=INTEGER},
+            product_dismiss_time = #{productDismissTime,jdbcType=TIMESTAMP},
+            product_description  = #{productDescription,jdbcType=VARCHAR},
+            product_scan_count   = #{productScanCount,jdbcType=BIGINT},
+            product_address      = #{productAddress,jdbcType=VARCHAR},
+            is_expired           = #{isExpired,jdbcType=BOOLEAN},
+            gmt_create           = #{gmtCreate,jdbcType=TIMESTAMP},
+            gmt_modified         = #{gmtModified,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <resultMap id="DesireProductVO" type="com.qzx.secondhand.model.vo.user.DesireProductVO">
+        <id column="id" property="id"/>
+        <result column="product_publisher_id" property="productPublisherId"/>
+        <result column="product_name" property="productName"/>
+        <result column="product_price" property="productPrice"/>
+        <result column="product_state" property="productState"/>
+        <result column="product_image" property="productImage"/>
+        <result column="product_description" property="productDescription"/>
+        <result column="product_scan_count" property="productScanCount"/>
+        <result column="product_address" property="productAddress"/>
+        <result column="is_expired" property="isExpired"/>
+        <result column="user_sex" property="userSex"/>
+        <result column="user_name" property="userName"/>
+        <result column="user_wx_number" property="userWxNumber"/>
+        <result column="user_phone_number" property="userPhoneNumber"/>
+        <result column="user_avatar" property="userAvatar"/>
+        <result column="user_score" property="userScore"/>
+        <result column="is_certified" property="isCertified"/>
+        <result column="product_release_time" property="productReleaseTime"/>
+    </resultMap>
+    <select id="selectDesireProductVO" resultMap="DesireProductVO">
+        select a1.id,
+               a1.product_publisher_id,
+               a1.product_name,
+               a1.product_price,
+               a1.product_state,
+               a1.product_image,
+               a1.product_release_time,
+               a1.product_description,
+               a1.product_scan_count,
+               a1.product_address,
+               a1.is_expired,
+               a2.user_sex,
+               a2.user_name,
+               a2.user_wx_number,
+               a2.user_phone_number,
+               a2.user_avatar,
+               a2.user_score,
+               a2.is_certified
+        from trade_desire_product a1
+                     left join trade_user a2
+                on user_id = a1.product_publisher_id
+        where product_publisher_id = #{id}
+
+        <choose>
+            <when test="expired == true">
+                <!--@ignoreSql-->
+                order by a1.is_expired desc ,a1.product_release_time desc
+            </when>
+            <when test="expired == false">
+                order by a1.product_release_time desc
+            </when>
+        </choose>
+    </select>
+</mapper>

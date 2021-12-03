@@ -1,5 +1,6 @@
 package com.qzx.secondhand.model.vo.user;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
 import java.util.List;
@@ -79,6 +80,7 @@ public class CollectionVO {
      * 商品上架时间
      */
     @ApiModelProperty(value = "商品上架时间")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date commodityReleaseTime;
 
 
