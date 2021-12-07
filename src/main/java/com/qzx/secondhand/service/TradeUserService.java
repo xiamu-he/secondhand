@@ -1,5 +1,6 @@
 package com.qzx.secondhand.service;
 
+import com.alibaba.fastjson.JSONObject;
 import com.qzx.secondhand.exception.handler.UserDefinedException;
 import com.qzx.secondhand.exception.result.Result;
 import com.qzx.secondhand.exception.statusCode.GlobalCodeEnum;
@@ -9,7 +10,9 @@ import com.qzx.secondhand.model.vo.user.UserDetailInfo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
+
 import com.qzx.secondhand.model.domain.TradeUser;
 
 /**
@@ -45,8 +48,13 @@ public class TradeUserService {
     }
 
 
-    public int updateByPrimaryKeySelective(TradeUser record) {
-        return tradeUserMapper.updateByPrimaryKeySelective(record);
+    public Result updateByPrimaryKeySelective(JSONObject jsonObject) {
+        TradeUser tradeUser = JSONObject.toJavaObject(jsonObject, TradeUser.class);
+        if (tradeUserMapper.updateByPrimaryKeySelective(tradeUser) > 0) {
+            return Result.success();
+        }
+        return Result.error(GlobalCodeEnum.USER_NOT_EXIST);
+
     }
 
     public int updateByPrimaryKey(TradeUser record) {

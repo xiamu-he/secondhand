@@ -3,6 +3,7 @@ package com.qzx.secondhand.service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.qzx.secondhand.exception.result.Result;
+import com.qzx.secondhand.exception.statusCode.GlobalCodeEnum;
 import com.qzx.secondhand.model.vo.user.CommodityVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -44,8 +45,11 @@ public class TradeCommodityService{
     }
 
     
-    public int updateByPrimaryKeySelective(TradeCommodity record) {
-        return tradeCommodityMapper.updateByPrimaryKeySelective(record);
+    public Result updateByPrimaryKeySelective(TradeCommodity record) {
+        if(tradeCommodityMapper.updateByPrimaryKeySelective(record)>0){
+            return Result.success();
+        }
+        return Result.error(GlobalCodeEnum.COMMODITY_NOT_EXIST);
     }
 
     

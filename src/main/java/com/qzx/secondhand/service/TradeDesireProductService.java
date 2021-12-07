@@ -3,6 +3,7 @@ package com.qzx.secondhand.service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.qzx.secondhand.exception.result.Result;
+import com.qzx.secondhand.exception.statusCode.GlobalCodeEnum;
 import com.qzx.secondhand.mapper.TradeCommodityMapper;
 import com.qzx.secondhand.model.vo.user.CommodityVO;
 import com.qzx.secondhand.model.vo.user.DesireProductVO;
@@ -49,8 +50,11 @@ public class TradeDesireProductService{
     }
 
     
-    public int updateByPrimaryKeySelective(TradeDesireProduct record) {
-        return tradeDesireProductMapper.updateByPrimaryKeySelective(record);
+    public Result updateByPrimaryKeySelective(TradeDesireProduct record) {
+        if(tradeDesireProductMapper.updateByPrimaryKeySelective(record)>0){
+            return Result.success();
+        }
+        return Result.error(GlobalCodeEnum.COMMODITY_NOT_EXIST);
     }
 
     

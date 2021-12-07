@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
 /**
@@ -83,5 +84,10 @@ public class JwtUtils {
 //            throw new UserDefinedException("token 错误");
         }
         return roleId;
+    }
+
+    public static Long verityUser(HttpServletRequest request) {
+        if (request.getHeader("token") == null) return null;
+        return verityUser(request.getHeader("token"));
     }
 }

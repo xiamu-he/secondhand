@@ -50,7 +50,7 @@ public class Result {
     }
 
     public static Result success() {
-        return new Result(null);
+        return new Result("success");
     }
 
     public static Result success(String msg) {
