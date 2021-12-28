@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qzx.secondhand.mapper.TradeNotificationMapper">
+    <resultMap id="BaseResultMap" type="com.qzx.secondhand.model.domain.TradeNotification">
+        <!--@mbg.generated-->
+        <!--@Table trade_notification-->
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="notification_id" jdbcType="BIGINT" property="notificationId"/>
+        <result column="cmd" jdbcType="INTEGER" property="cmd"/>
+        <result column="type_hood" jdbcType="INTEGER" property="typeHood"/>
+        <result column="sender" jdbcType="BIGINT" property="sender"/>
+        <result column="sender_name" jdbcType="VARCHAR" property="senderName"/>
+        <result column="receiver" jdbcType="BIGINT" property="receiver"/>
+        <result column="title" jdbcType="VARCHAR" property="title"/>
+        <result column="content" jdbcType="VARCHAR" property="content"/>
+        <result column="extras" jdbcType="VARCHAR" property="extras"/>
+        <result column="send_time" jdbcType="TIMESTAMP" property="sendTime"/>
+        <result column="is_readed" jdbcType="INTEGER" property="isReaded"/>
+        <result column="is_processed" jdbcType="INTEGER" property="isProcessed"/>
+        <result column="is_dismissed" jdbcType="BIT" property="isDismissed"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime"/>
+        <result column="processed_time" jdbcType="TIMESTAMP" property="processedTime"/>
+        <result column="processed_result" jdbcType="VARCHAR" property="processedResult"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, notification_id, cmd, type_hood, sender, sender_name, receiver, title, content,
+        extras, send_time, is_readed, is_processed, is_dismissed, create_time, modify_time,
+        processed_time, processed_result
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from trade_notification
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        <!--@mbg.generated-->
+        delete
+        from trade_notification
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id"
+            parameterType="com.qzx.secondhand.model.domain.TradeNotification" useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into trade_notification (notification_id, cmd, type_hood,
+                                        sender, sender_name, receiver,
+                                        title, content, extras,
+                                        send_time, is_readed, is_processed,
+                                        is_dismissed, create_time, modify_time,
+                                        processed_time, processed_result)
+        values (#{notificationId,jdbcType=BIGINT}, #{cmd,jdbcType=INTEGER}, #{typeHood,jdbcType=INTEGER},
+                #{sender,jdbcType=BIGINT}, #{senderName,jdbcType=VARCHAR}, #{receiver,jdbcType=BIGINT},
+                #{title,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{extras,jdbcType=VARCHAR},
+                #{sendTime,jdbcType=TIMESTAMP}, #{isReaded,jdbcType=INTEGER}, #{isProcessed,jdbcType=INTEGER},
+                #{isDismissed,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP},
+                #{processedTime,jdbcType=TIMESTAMP}, #{processedResult,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id"
+            parameterType="com.qzx.secondhand.model.domain.TradeNotification" useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into trade_notification
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="notificationId != null">
+                notification_id,
+            </if>
+            <if test="cmd != null">
+                cmd,
+            </if>
+            <if test="typeHood != null">
+                type_hood,
+            </if>
+            <if test="sender != null">
+                sender,
+            </if>
+            <if test="senderName != null">
+                sender_name,
+            </if>
+            <if test="receiver != null">
+                receiver,
+            </if>
+            <if test="title != null">
+                title,
+            </if>
+            <if test="content != null">
+                content,
+            </if>
+            <if test="extras != null">
+                extras,
+            </if>
+            <if test="sendTime != null">
+                send_time,
+            </if>
+            <if test="isReaded != null">
+                is_readed,
+            </if>
+            <if test="isProcessed != null">
+                is_processed,
+            </if>
+            <if test="isDismissed != null">
+                is_dismissed,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="modifyTime != null">
+                modify_time,
+            </if>
+            <if test="processedTime != null">
+                processed_time,
+            </if>
+            <if test="processedResult != null">
+                processed_result,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="notificationId != null">
+                #{notificationId,jdbcType=BIGINT},
+            </if>
+            <if test="cmd != null">
+                #{cmd,jdbcType=INTEGER},
+            </if>
+            <if test="typeHood != null">
+                #{typeHood,jdbcType=INTEGER},
+            </if>
+            <if test="sender != null">
+                #{sender,jdbcType=BIGINT},
+            </if>
+            <if test="senderName != null">
+                #{senderName,jdbcType=VARCHAR},
+            </if>
+            <if test="receiver != null">
+                #{receiver,jdbcType=BIGINT},
+            </if>
+            <if test="title != null">
+                #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="content != null">
+                #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="extras != null">
+                #{extras,jdbcType=VARCHAR},
+            </if>
+            <if test="sendTime != null">
+                #{sendTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="isReaded != null">
+                #{isReaded,jdbcType=INTEGER},
+            </if>
+            <if test="isProcessed != null">
+                #{isProcessed,jdbcType=INTEGER},
+            </if>
+            <if test="isDismissed != null">
+                #{isDismissed,jdbcType=BIT},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="modifyTime != null">
+                #{modifyTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="processedTime != null">
+                #{processedTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="processedResult != null">
+                #{processedResult,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.qzx.secondhand.model.domain.TradeNotification">
+        <!--@mbg.generated-->
+        update trade_notification
+        <set>
+            <if test="notificationId != null">
+                notification_id = #{notificationId,jdbcType=BIGINT},
+            </if>
+            <if test="cmd != null">
+                cmd = #{cmd,jdbcType=INTEGER},
+            </if>
+            <if test="typeHood != null">
+                type_hood = #{typeHood,jdbcType=INTEGER},
+            </if>
+            <if test="sender != null">
+                sender = #{sender,jdbcType=BIGINT},
+            </if>
+            <if test="senderName != null">
+                sender_name = #{senderName,jdbcType=VARCHAR},
+            </if>
+            <if test="receiver != null">
+                receiver = #{receiver,jdbcType=BIGINT},
+            </if>
+            <if test="title != null">
+                title = #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="content != null">
+                content = #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="extras != null">
+                extras = #{extras,jdbcType=VARCHAR},
+            </if>
+            <if test="sendTime != null">
+                send_time = #{sendTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="isReaded != null">
+                is_readed = #{isReaded,jdbcType=INTEGER},
+            </if>
+            <if test="isProcessed != null">
+                is_processed = #{isProcessed,jdbcType=INTEGER},
+            </if>
+            <if test="isDismissed != null">
+                is_dismissed = #{isDismissed,jdbcType=BIT},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="modifyTime != null">
+                modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="processedTime != null">
+                processed_time = #{processedTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="processedResult != null">
+                processed_result = #{processedResult,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.qzx.secondhand.model.domain.TradeNotification">
+        <!--@mbg.generated-->
+        update trade_notification
+        set notification_id  = #{notificationId,jdbcType=BIGINT},
+            cmd              = #{cmd,jdbcType=INTEGER},
+            type_hood        = #{typeHood,jdbcType=INTEGER},
+            sender           = #{sender,jdbcType=BIGINT},
+            sender_name      = #{senderName,jdbcType=VARCHAR},
+            receiver         = #{receiver,jdbcType=BIGINT},
+            title            = #{title,jdbcType=VARCHAR},
+            content          = #{content,jdbcType=VARCHAR},
+            extras           = #{extras,jdbcType=VARCHAR},
+            send_time        = #{sendTime,jdbcType=TIMESTAMP},
+            is_readed        = #{isReaded,jdbcType=INTEGER},
+            is_processed     = #{isProcessed,jdbcType=INTEGER},
+            is_dismissed     = #{isDismissed,jdbcType=BIT},
+            create_time      = #{createTime,jdbcType=TIMESTAMP},
+            modify_time      = #{modifyTime,jdbcType=TIMESTAMP},
+            processed_time   = #{processedTime,jdbcType=TIMESTAMP},
+            processed_result = #{processedResult,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <!--auto generated by MybatisCodeHelper on 2021-12-09-->
+    <resultMap id="ReceiverResultMap" type="com.qzx.secondhand.model.vo.user.NotificationVO">
+        <result column="notification_id" property="notificationId"/>
+        <result column="type_hood" property="typeHood"/>
+        <result column="sender" property="sender"/>
+        <result column="sender_name" property="senderName"/>
+        <result column="receiver" property="receiver"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="extras" property="extras"/>
+        <result column="send_time" property="sendTime"/>
+    </resultMap>
+    <select id="selectByReceiver" resultMap="ReceiverResultMap">
+        select notification_id,
+               type_hood,
+               sender,
+               sender_name,
+               receiver,
+               title,
+               content,
+               extras,
+               send_time
+        from trade_notification
+        where receiver = #{receiver,jdbcType=BIGINT}
+        and is_dismissed = false and is_readed = #{isReaded,jdbcType=INTEGER}
+    </select>
+
+<!--auto generated by MybatisCodeHelper on 2021-12-09-->
+    <update id="updateIsReadedByNotificationId">
+        update trade_notification
+        set is_readed= 1
+        where notification_id=#{notificationId,jdbcType=BIGINT}
+    </update>
+
+<!--auto generated by MybatisCodeHelper on 2021-12-09-->
+    <update id="updateIsDismissedByNotificationId">
+        update trade_notification
+        set is_dismissed= 1
+        where notification_id=#{notificationId,jdbcType=BIGINT}
+    </update>
+</mapper>

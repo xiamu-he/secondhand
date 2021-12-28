@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qzx.secondhand.mapper.TradeUserBeginnerInfoMapper">
+  <resultMap id="BaseResultMap" type="com.qzx.secondhand.model.domain.TradeUserBeginnerInfo">
+    <!--@mbg.generated-->
+    <!--@Table trade_user_beginner_info-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="first_collection" jdbcType="BIT" property="firstCollection" />
+    <result column="first_publish_sell" jdbcType="BIT" property="firstPublishSell" />
+    <result column="first_publish_exchange" jdbcType="BIT" property="firstPublishExchange" />
+    <result column="first_publish_free" jdbcType="BIT" property="firstPublishFree" />
+    <result column="first_sold_out" jdbcType="BIT" property="firstSoldOut" />
+    <result column="first_evaluate" jdbcType="BIT" property="firstEvaluate" />
+    <result column="first_share" jdbcType="BIT" property="firstShare" />
+    <result column="first_explore" jdbcType="BIT" property="firstExplore" />
+    <result column="first_message" jdbcType="BIT" property="firstMessage" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, user_id, first_collection, first_publish_sell, first_publish_exchange, first_publish_free, 
+    first_sold_out, first_evaluate, first_share, first_explore, first_message
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from trade_user_beginner_info
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from trade_user_beginner_info
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.qzx.secondhand.model.domain.TradeUserBeginnerInfo" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into trade_user_beginner_info (user_id, first_collection, first_publish_sell, 
+      first_publish_exchange, first_publish_free, first_sold_out, 
+      first_evaluate, first_share, first_explore, 
+      first_message)
+    values (#{userId,jdbcType=BIGINT}, #{firstCollection,jdbcType=BIT}, #{firstPublishSell,jdbcType=BIT}, 
+      #{firstPublishExchange,jdbcType=BIT}, #{firstPublishFree,jdbcType=BIT}, #{firstSoldOut,jdbcType=BIT}, 
+      #{firstEvaluate,jdbcType=BIT}, #{firstShare,jdbcType=BIT}, #{firstExplore,jdbcType=BIT}, 
+      #{firstMessage,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.qzx.secondhand.model.domain.TradeUserBeginnerInfo" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into trade_user_beginner_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="firstCollection != null">
+        first_collection,
+      </if>
+      <if test="firstPublishSell != null">
+        first_publish_sell,
+      </if>
+      <if test="firstPublishExchange != null">
+        first_publish_exchange,
+      </if>
+      <if test="firstPublishFree != null">
+        first_publish_free,
+      </if>
+      <if test="firstSoldOut != null">
+        first_sold_out,
+      </if>
+      <if test="firstEvaluate != null">
+        first_evaluate,
+      </if>
+      <if test="firstShare != null">
+        first_share,
+      </if>
+      <if test="firstExplore != null">
+        first_explore,
+      </if>
+      <if test="firstMessage != null">
+        first_message,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="firstCollection != null">
+        #{firstCollection,jdbcType=BIT},
+      </if>
+      <if test="firstPublishSell != null">
+        #{firstPublishSell,jdbcType=BIT},
+      </if>
+      <if test="firstPublishExchange != null">
+        #{firstPublishExchange,jdbcType=BIT},
+      </if>
+      <if test="firstPublishFree != null">
+        #{firstPublishFree,jdbcType=BIT},
+      </if>
+      <if test="firstSoldOut != null">
+        #{firstSoldOut,jdbcType=BIT},
+      </if>
+      <if test="firstEvaluate != null">
+        #{firstEvaluate,jdbcType=BIT},
+      </if>
+      <if test="firstShare != null">
+        #{firstShare,jdbcType=BIT},
+      </if>
+      <if test="firstExplore != null">
+        #{firstExplore,jdbcType=BIT},
+      </if>
+      <if test="firstMessage != null">
+        #{firstMessage,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qzx.secondhand.model.domain.TradeUserBeginnerInfo">
+    <!--@mbg.generated-->
+    update trade_user_beginner_info
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="firstCollection != null">
+        first_collection = #{firstCollection,jdbcType=BIT},
+      </if>
+      <if test="firstPublishSell != null">
+        first_publish_sell = #{firstPublishSell,jdbcType=BIT},
+      </if>
+      <if test="firstPublishExchange != null">
+        first_publish_exchange = #{firstPublishExchange,jdbcType=BIT},
+      </if>
+      <if test="firstPublishFree != null">
+        first_publish_free = #{firstPublishFree,jdbcType=BIT},
+      </if>
+      <if test="firstSoldOut != null">
+        first_sold_out = #{firstSoldOut,jdbcType=BIT},
+      </if>
+      <if test="firstEvaluate != null">
+        first_evaluate = #{firstEvaluate,jdbcType=BIT},
+      </if>
+      <if test="firstShare != null">
+        first_share = #{firstShare,jdbcType=BIT},
+      </if>
+      <if test="firstExplore != null">
+        first_explore = #{firstExplore,jdbcType=BIT},
+      </if>
+      <if test="firstMessage != null">
+        first_message = #{firstMessage,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qzx.secondhand.model.domain.TradeUserBeginnerInfo">
+    <!--@mbg.generated-->
+    update trade_user_beginner_info
+    set user_id = #{userId,jdbcType=BIGINT},
+      first_collection = #{firstCollection,jdbcType=BIT},
+      first_publish_sell = #{firstPublishSell,jdbcType=BIT},
+      first_publish_exchange = #{firstPublishExchange,jdbcType=BIT},
+      first_publish_free = #{firstPublishFree,jdbcType=BIT},
+      first_sold_out = #{firstSoldOut,jdbcType=BIT},
+      first_evaluate = #{firstEvaluate,jdbcType=BIT},
+      first_share = #{firstShare,jdbcType=BIT},
+      first_explore = #{firstExplore,jdbcType=BIT},
+      first_message = #{firstMessage,jdbcType=BIT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

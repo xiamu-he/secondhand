@@ -2,26 +2,19 @@ package com.qzx.secondhand.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.qzx.secondhand.exception.result.Result;
-import com.qzx.secondhand.model.domain.TradeCollection;
 import com.qzx.secondhand.model.domain.TradeCommodity;
 import com.qzx.secondhand.model.domain.TradeDesireProduct;
-import com.qzx.secondhand.model.vo.user.UserDetailInfo;
-import com.qzx.secondhand.service.TradeCollectionService;
-import com.qzx.secondhand.service.TradeCommodityService;
-import com.qzx.secondhand.service.TradeDesireProductService;
-import com.qzx.secondhand.service.TradeUserService;
-import com.qzx.secondhand.util.JwtUtils;
-import io.lettuce.core.cluster.pubsub.api.sync.PubSubNodeSelection;
+import com.qzx.secondhand.model.domain.TradeNotification;
+import com.qzx.secondhand.model.domain.TradeUser;
+import com.qzx.secondhand.service.*;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
-import org.apache.ibatis.annotations.Update;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.prefs.BackingStoreException;
+
 
 /**
  * @author qzx
@@ -30,7 +23,7 @@ import java.util.prefs.BackingStoreException;
  */
 @RestController
 @RequestMapping(value = "/user")
-public class TradeUser {
+public class TradeUserController {
     @Autowired
     TradeUserService tradeUserService;
 
@@ -42,6 +35,18 @@ public class TradeUser {
 
     @Autowired
     TradeDesireProductService tradeDesireProductService;
+
+    @Autowired
+    TradeUserBeginnerInfoService tradeUserBeginnerInfoService;
+
+    @Autowired
+    UserDailyScoreService userDailyScoreService;
+
+    @Autowired
+    TradeFeedbackService tradeFeedbackService;
+
+    @Autowired
+    TradeNotificationService tradeNotificationService;
 
     @GetMapping("/login")
     public Result login() {
@@ -147,8 +152,83 @@ public class TradeUser {
     }
 
     @ApiOperation("修改用户信息")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "token", value = "凭据", required = true, dataTypeClass = String.class, paramType = "header")
+    })
     @PutMapping(value = "/update/info")
     public Result updateUserInfo(@RequestBody JSONObject jsonObject){
-        return tradeUserService.updateByPrimaryKeySelective(jsonObject);
+        return tradeUserService.updateUserInfoByPrimaryKeySelective(jsonObject);
+    }
+
+    @ApiOperation("用户认证")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "token", value = "凭据", required = true, dataTypeClass = String.class, paramType = "header")
+    })
+    @PutMapping(value = "/card/verify")
+    public Result verifyInfo(@RequestBody JSONObject jsonObject){
+        return tradeUserService.updateUserVerifyByPrimaryKeySelective(jsonObject);
+    }
+
+    @ApiOperation("查看我的首次积分记录表")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "token", value = "凭据", required = true, dataTypeClass = String.class, paramType = "header"),
+            @ApiImplicitParam(name = "userId", value = "用户id", required = true, dataTypeClass = Long.class, paramType = "query")
+    })
+    @GetMapping(value = "/first/score/record")
+    public Result getFirstScoreRecord(@RequestParam("userId") Long userId){
+        return tradeUserBeginnerInfoService.selectByPrimaryKey(userId);
+    }
+
+    @ApiOperation("查看我的每日积分记录表")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "token", value = "凭据", required = true, dataTypeClass = String.class, paramType = "header"),
+            @ApiImplicitParam(name = "userId", value = "用户id", required = true, dataTypeClass = Long.class, paramType = "query")
+    })
+    @GetMapping(value = "/daily/score/record")
+    public Result getDailyScoreRecord(@RequestParam("userId") Long userId){
+        return userDailyScoreService.selectByPrimaryKey(userId);
+    }
+
+
+    @ApiOperation("用户反馈")
+    @PostMapping(value = "/feedback")
+    public Result addFeedback(@RequestBody JSONObject jsonObject){
+        return tradeFeedbackService.insertSelective(jsonObject);
+    }
+
+    @ApiOperation("拉取消息 已读或未读")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "token", value = "凭据", required = true, dataTypeClass = String.class, paramType = "header"),
+            @ApiImplicitParam(name = "receiver", value = "消息接收方id", required = true, dataTypeClass = Long.class, paramType = "query"),
+            @ApiImplicitParam(name = "isReaded", value = "0：未读消息，1：已读消息", required = true, dataTypeClass = Integer.class, paramType = "query"),
+            @ApiImplicitParam(name = "pageSize", value = "页面大小", required = true, dataTypeClass = Integer.class, paramType = "query"),
+            @ApiImplicitParam(name = "page", value = "页码", required = true, dataTypeClass = Integer.class, paramType = "query"),
+    })
+    @GetMapping(value = "/notification/notReaded")
+    public Result getNotificationNotReaded(@RequestParam("receiver")Long receiver,
+                                           @RequestParam("isReaded")Integer isReaded,
+                                           @RequestParam(value = "pageSize", defaultValue = "8") Integer pageSize,
+                                           @RequestParam(value = "page", defaultValue = "1") Integer page){
+        return tradeNotificationService.selectByReceiverwithPage(page,pageSize,receiver,isReaded);
+    }
+
+    @ApiOperation("修改消息状态")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "token", value = "凭据", required = true, dataTypeClass = String.class, paramType = "header"),
+            @ApiImplicitParam (name="notificationId",value = "消息Id",required = true,dataTypeClass = Long.class,paramType = "query")
+    })
+    @PutMapping(value = "/notification/state")
+    public Result updateNotificationState(@RequestParam("notificationId")Long notificationId){
+        return tradeNotificationService.updateIsReadedByNotificationId(notificationId);
+    }
+
+    @ApiOperation("删除消息")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "token", value = "凭据", required = true, dataTypeClass = String.class, paramType = "header"),
+            @ApiImplicitParam(name="notificationId",value = "消息Id",required = true,dataTypeClass = Long.class,paramType = "query")
+    })
+    @DeleteMapping("/notification/delete")
+    public Result deleteNotification(@RequestParam("notificationId")Long notificationId){
+        return tradeNotificationService.updateIsDismissedByNotificationId(notificationId);
     }
 }

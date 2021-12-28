@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qzx.secondhand.mapper.TradeFeedbackMapper">
+  <resultMap id="BaseResultMap" type="com.qzx.secondhand.model.domain.TradeFeedback">
+    <!--@mbg.generated-->
+    <!--@Table trade_feedback-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="user_contact" jdbcType="VARCHAR" property="userContact" />
+    <result column="feedback_content" jdbcType="VARCHAR" property="feedbackContent" />
+    <result column="is_dismissed" jdbcType="BOOLEAN" property="isDismissed" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, user_id, user_contact, feedback_content, is_dismissed, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from trade_feedback
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from trade_feedback
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.qzx.secondhand.model.domain.TradeFeedback" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into trade_feedback (user_id, user_contact, feedback_content, 
+      is_dismissed, gmt_create, gmt_modified
+      )
+    values (#{userId,jdbcType=BIGINT}, #{userContact,jdbcType=VARCHAR}, #{feedbackContent,jdbcType=VARCHAR}, 
+      #{isDismissed,jdbcType=BOOLEAN}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.qzx.secondhand.model.domain.TradeFeedback" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into trade_feedback
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="userContact != null">
+        user_contact,
+      </if>
+      <if test="feedbackContent != null">
+        feedback_content,
+      </if>
+      <if test="isDismissed != null">
+        is_dismissed,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="userContact != null">
+        #{userContact,jdbcType=VARCHAR},
+      </if>
+      <if test="feedbackContent != null">
+        #{feedbackContent,jdbcType=VARCHAR},
+      </if>
+      <if test="isDismissed != null">
+        #{isDismissed,jdbcType=BOOLEAN},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qzx.secondhand.model.domain.TradeFeedback">
+    <!--@mbg.generated-->
+    update trade_feedback
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="userContact != null">
+        user_contact = #{userContact,jdbcType=VARCHAR},
+      </if>
+      <if test="feedbackContent != null">
+        feedback_content = #{feedbackContent,jdbcType=VARCHAR},
+      </if>
+      <if test="isDismissed != null">
+        is_dismissed = #{isDismissed,jdbcType=BOOLEAN},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qzx.secondhand.model.domain.TradeFeedback">
+    <!--@mbg.generated-->
+    update trade_feedback
+    set user_id = #{userId,jdbcType=BIGINT},
+      user_contact = #{userContact,jdbcType=VARCHAR},
+      feedback_content = #{feedbackContent,jdbcType=VARCHAR},
+      is_dismissed = #{isDismissed,jdbcType=BOOLEAN},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

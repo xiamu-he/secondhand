@@ -32,6 +32,9 @@ public enum GlobalCodeEnum {
     USER_SCORE_LOW(1015, "用户分数不足"),
     USER_NOT_CERTIFIED(1016, "用户未认证"),
     USER_DAILY_SCORE_NOT_EXIST(1017, "用户每日分数不存在"),
+    INSERT_FAIL(1018,"插入失败"),
+    UPDATE_FAIL(1019,"修改失败"),
+    DALETE_FAIL(1020,"删除失败"),
 
 
     //文件异常类 20XX

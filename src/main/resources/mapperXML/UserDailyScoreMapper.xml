@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qzx.secondhand.mapper.UserDailyScoreMapper">
+  <resultMap id="BaseResultMap" type="com.qzx.secondhand.model.domain.UserDailyScore">
+    <!--@mbg.generated-->
+    <!--@Table user_daily_score-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="record_time" jdbcType="TIMESTAMP" property="recordTime" />
+    <result column="user_login" jdbcType="INTEGER" property="userLogin" />
+    <result column="every_login" jdbcType="INTEGER" property="everyLogin" />
+    <result column="user_publish" jdbcType="INTEGER" property="userPublish" />
+    <result column="user_message" jdbcType="INTEGER" property="userMessage" />
+    <result column="user_sell" jdbcType="INTEGER" property="userSell" />
+    <result column="user_collect" jdbcType="INTEGER" property="userCollect" />
+    <result column="user_share" jdbcType="INTEGER" property="userShare" />
+    <result column="is_dismissed" jdbcType="TINYINT" property="isDismissed" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modified_time" jdbcType="TIMESTAMP" property="modifiedTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, user_id, record_time, user_login, every_login, user_publish, user_message, user_sell, 
+    user_collect, user_share, is_dismissed, create_time, modified_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from user_daily_score
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from user_daily_score
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.qzx.secondhand.model.domain.UserDailyScore" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into user_daily_score (user_id, record_time, user_login, 
+      every_login, user_publish, user_message, 
+      user_sell, user_collect, user_share, 
+      is_dismissed, create_time, modified_time
+      )
+    values (#{userId,jdbcType=BIGINT}, #{recordTime,jdbcType=TIMESTAMP}, #{userLogin,jdbcType=INTEGER}, 
+      #{everyLogin,jdbcType=INTEGER}, #{userPublish,jdbcType=INTEGER}, #{userMessage,jdbcType=INTEGER}, 
+      #{userSell,jdbcType=INTEGER}, #{userCollect,jdbcType=INTEGER}, #{userShare,jdbcType=INTEGER}, 
+      #{isDismissed,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{modifiedTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.qzx.secondhand.model.domain.UserDailyScore" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into user_daily_score
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="recordTime != null">
+        record_time,
+      </if>
+      <if test="userLogin != null">
+        user_login,
+      </if>
+      <if test="everyLogin != null">
+        every_login,
+      </if>
+      <if test="userPublish != null">
+        user_publish,
+      </if>
+      <if test="userMessage != null">
+        user_message,
+      </if>
+      <if test="userSell != null">
+        user_sell,
+      </if>
+      <if test="userCollect != null">
+        user_collect,
+      </if>
+      <if test="userShare != null">
+        user_share,
+      </if>
+      <if test="isDismissed != null">
+        is_dismissed,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="modifiedTime != null">
+        modified_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="recordTime != null">
+        #{recordTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userLogin != null">
+        #{userLogin,jdbcType=INTEGER},
+      </if>
+      <if test="everyLogin != null">
+        #{everyLogin,jdbcType=INTEGER},
+      </if>
+      <if test="userPublish != null">
+        #{userPublish,jdbcType=INTEGER},
+      </if>
+      <if test="userMessage != null">
+        #{userMessage,jdbcType=INTEGER},
+      </if>
+      <if test="userSell != null">
+        #{userSell,jdbcType=INTEGER},
+      </if>
+      <if test="userCollect != null">
+        #{userCollect,jdbcType=INTEGER},
+      </if>
+      <if test="userShare != null">
+        #{userShare,jdbcType=INTEGER},
+      </if>
+      <if test="isDismissed != null">
+        #{isDismissed,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifiedTime != null">
+        #{modifiedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qzx.secondhand.model.domain.UserDailyScore">
+    <!--@mbg.generated-->
+    update user_daily_score
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="recordTime != null">
+        record_time = #{recordTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userLogin != null">
+        user_login = #{userLogin,jdbcType=INTEGER},
+      </if>
+      <if test="everyLogin != null">
+        every_login = #{everyLogin,jdbcType=INTEGER},
+      </if>
+      <if test="userPublish != null">
+        user_publish = #{userPublish,jdbcType=INTEGER},
+      </if>
+      <if test="userMessage != null">
+        user_message = #{userMessage,jdbcType=INTEGER},
+      </if>
+      <if test="userSell != null">
+        user_sell = #{userSell,jdbcType=INTEGER},
+      </if>
+      <if test="userCollect != null">
+        user_collect = #{userCollect,jdbcType=INTEGER},
+      </if>
+      <if test="userShare != null">
+        user_share = #{userShare,jdbcType=INTEGER},
+      </if>
+      <if test="isDismissed != null">
+        is_dismissed = #{isDismissed,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifiedTime != null">
+        modified_time = #{modifiedTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qzx.secondhand.model.domain.UserDailyScore">
+    <!--@mbg.generated-->
+    update user_daily_score
+    set user_id = #{userId,jdbcType=BIGINT},
+      record_time = #{recordTime,jdbcType=TIMESTAMP},
+      user_login = #{userLogin,jdbcType=INTEGER},
+      every_login = #{everyLogin,jdbcType=INTEGER},
+      user_publish = #{userPublish,jdbcType=INTEGER},
+      user_message = #{userMessage,jdbcType=INTEGER},
+      user_sell = #{userSell,jdbcType=INTEGER},
+      user_collect = #{userCollect,jdbcType=INTEGER},
+      user_share = #{userShare,jdbcType=INTEGER},
+      is_dismissed = #{isDismissed,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modified_time = #{modifiedTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+<!--auto generated by MybatisCodeHelper on 2021-12-08-->
+  <select id="selectByUserId" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user_daily_score
+        <where>
+            <if test="userId != null">
+                and user_id=#{userId,jdbcType=BIGINT}
+            </if>
+        </where>
+    </select>
+</mapper>

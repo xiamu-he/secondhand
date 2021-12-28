@@ -48,7 +48,7 @@ public class TradeUserService {
     }
 
 
-    public Result updateByPrimaryKeySelective(JSONObject jsonObject) {
+    public Result updateUserInfoByPrimaryKeySelective(JSONObject jsonObject) {
         TradeUser tradeUser = JSONObject.toJavaObject(jsonObject, TradeUser.class);
         if (tradeUserMapper.updateByPrimaryKeySelective(tradeUser) > 0) {
             return Result.success();
@@ -79,6 +79,15 @@ public class TradeUserService {
         UserBriefInfo userBriefInfo = new UserBriefInfo();
         BeanUtils.copyProperties(tradeUser, userBriefInfo);
         return Result.success(userBriefInfo);
+    }
+
+    public Result updateUserVerifyByPrimaryKeySelective(JSONObject jsonObject) {
+        TradeUser tradeUser = JSONObject.toJavaObject(jsonObject, TradeUser.class);
+        tradeUser.setIsCertified(true);
+        if (tradeUserMapper.updateByPrimaryKeySelective(tradeUser) > 0) {
+            return Result.success();
+        }
+        return Result.error(GlobalCodeEnum.USER_NOT_EXIST);
     }
 }
 
